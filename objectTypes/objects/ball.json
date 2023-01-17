@@ -1,0 +1,75 @@
+{
+	"name": "ball",
+	"plugin-id": "Sprite",
+	"sid": 401871928026490,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "dmg",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 856044085824063
+		},
+		{
+			"name": "is_active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 399184238673827
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 344923046699224
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 483574861731289
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 38,
+						"height": 38,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4363617,
+						"collisionPoly": {
+							"points": [
+								0.058823529411764705,
+								0.058823529411764705,
+								0.9411764705882353,
+								0.058823529411764705,
+								0.9411764705882353,
+								0.9411764705882353,
+								0.058823529411764705,
+								0.9411764705882353
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 733550126282429,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,3809 @@
+{
+	"name": "#game",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "spawn_rate",
+			"type": "number",
+			"initialValue": "1.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 537580886209279
+		},
+		{
+			"eventType": "variable",
+			"name": "gold",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 908089939756978
+		},
+		{
+			"eventType": "variable",
+			"name": "enemy_destroyed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 710788577547022
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 204254309182588
+				}
+			],
+			"actions": [
+				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 690306368078955,
+					"parameters": {
+						"object": "pudge"
+					}
+				}
+			],
+			"sid": 727874363798595,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "data"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 626804421826480,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "hook"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 683932241917462,
+									"disabled": true,
+									"parameters": {
+										"key": "\"hook\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 878816634766986,
+									"parameters": {
+										"key": "\"hook_dmg\"",
+										"value": "75"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 515840456903654,
+									"parameters": {
+										"key": "\"hook_range\"",
+										"value": "425"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 178037306016854,
+									"parameters": {
+										"key": "\"hook_rate\"",
+										"value": "2.5"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 285235644795114,
+									"parameters": {
+										"key": "\"hook_cooldown\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 658674226718903
+						},
+						{
+							"eventType": "comment",
+							"text": "saw"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 892663776145803,
+									"disabled": true,
+									"parameters": {
+										"key": "\"bomb\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 899340736842486,
+									"disabled": true,
+									"parameters": {
+										"key": "\"saw\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 817783787554185,
+									"parameters": {
+										"key": "\"spear\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 762480270555100
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-rate-of-fire",
+									"objectClass": "hook_starter",
+									"sid": 577444740176517,
+									"behaviorType": "Turret",
+									"parameters": {
+										"rate-of-fire": "data.Get(\"hook_rate\")"
+									}
+								},
+								{
+									"id": "set-range",
+									"objectClass": "hook_starter",
+									"sid": 519651110281065,
+									"behaviorType": "Turret",
+									"parameters": {
+										"range": "data.Get(\"hook_range\")"
+									}
+								}
+							],
+							"sid": 268377578083846
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "creeps"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 813429343410441,
+							"parameters": {
+								"key": "\"creep_lvl\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 709425889327560,
+							"parameters": {
+								"key": "\"creep_speed\"",
+								"value": "100"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 893903192510739,
+							"parameters": {
+								"key": "\"creep_attack_rate\"",
+								"value": "1.85"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 526415134105279,
+							"parameters": {
+								"key": "\"creep_attack_dmg\"",
+								"value": "2"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 402425439226274,
+							"parameters": {
+								"key": "\"magus_attack_rate\"",
+								"value": "3.2"
+							}
+						}
+					],
+					"sid": 241709362067394
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 430828665557581,
+							"parameters": {
+								"count": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "creep_create_new",
+							"sid": 216360246976417
+						}
+					],
+					"sid": 719503627641572
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Bonus",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 660411851711903,
+									"parameters": {
+										"key": "\"bomb\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 301597446252294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "pudge",
+											"sid": 876875688015045,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"bomb\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "pudge",
+											"sid": 369344620737318,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "6",
+												"type": "once",
+												"tag": "\"bomb\""
+											}
+										}
+									],
+									"sid": 890270245720866
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "pudge",
+											"sid": 564762812212308,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"bomb\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 777682764374095,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "creep",
+													"sid": 962955236822810,
+													"parameters": {
+														"which": "nearest",
+														"x": "pudge.X",
+														"y": "pudge.Y"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 937702856519503,
+													"parameters": {
+														"first-value": "distance(pudge.X, pudge.Y, creep.X, creep.Y)",
+														"comparison": 3,
+														"second-value": "500"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 738590695264578,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 557579124990463,
+															"parameters": {
+																"count": "data.Get(\"bomb\")"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 710402996493801,
+															"parameters": {
+																"seconds": "random(1.45)"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "pudge",
+															"sid": 828740371743757,
+															"parameters": {
+																"object": "bomb",
+																"layer": "\"bg\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bomb",
+															"sid": 298147626678016,
+															"parameters": {
+																"angle": "random(360)"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "bomb",
+															"sid": 485092176295481,
+															"parameters": {
+																"width": "choose(Self.Width, -Self.Width)"
+															}
+														}
+													],
+													"sid": 252545061203097
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 161071710749986,
+									"parameters": {
+										"key": "\"saw\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 322271940426203,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "pudge",
+											"sid": 967551589999199,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"saw\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "pudge",
+											"sid": 674221472293096,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "max(10 - data.Get(\"saw\") * 2, 3)",
+												"type": "once",
+												"tag": "\"saw\""
+											}
+										}
+									],
+									"sid": 604142547719467
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "pudge",
+											"sid": 790449905308969,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"saw\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 996162350602442,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "creep",
+													"sid": 502751732259553,
+													"parameters": {
+														"which": "nearest",
+														"x": "pudge.X",
+														"y": "pudge.Y"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 935828138401104,
+													"parameters": {
+														"first-value": "distance(pudge.X, pudge.Y, creep.X, creep.Y)",
+														"comparison": 3,
+														"second-value": "800"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "pudge",
+													"sid": 941407654530654,
+													"parameters": {
+														"object": "saw",
+														"layer": "\"bg\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												}
+											],
+											"sid": 378879006066039
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 700395183514366,
+									"parameters": {
+										"key": "\"spear\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 207067015350091,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "pudge",
+											"sid": 303954452250196,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"spear\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "pudge",
+											"sid": 415548405261325,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "max(2 - data.Get(\"spear\") * 0.25, 0.25)",
+												"type": "once",
+												"tag": "\"spear\""
+											}
+										}
+									],
+									"sid": 223680941970308
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "pudge",
+											"sid": 967768077678985,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"spear\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 415906725030896,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-screen",
+													"objectClass": "creep",
+													"sid": 606755446897730
+												},
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "creep",
+													"sid": 823347310133634,
+													"parameters": {
+														"which": "nearest",
+														"x": "pudge.X",
+														"y": "pudge.Y"
+													}
+												},
+												{
+													"id": "pick-random-instance",
+													"objectClass": "System",
+													"sid": 920662322238985,
+													"disabled": true,
+													"parameters": {
+														"object": "creep"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "pudge",
+													"sid": 893723056251630,
+													"parameters": {
+														"object": "spear",
+														"layer": "\"hook\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle-toward-position",
+													"objectClass": "spear",
+													"sid": 273449434866891,
+													"parameters": {
+														"x": "creep.X",
+														"y": "creep.Y"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "spear",
+													"sid": 380793109935462,
+													"parameters": {
+														"instance-variable": "dmg",
+														"value": "data.Get(\"spear\") * 10"
+													}
+												}
+											],
+											"sid": 141480059623864
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Saw",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "saw",
+											"sid": 324706608075316
+										}
+									],
+									"actions": [],
+									"sid": 728883504798309,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 212495999204393,
+													"parameters": {
+														"audio-file": "Silencer_projectile_launch1",
+														"loop": "not-looping",
+														"volume": "-20",
+														"object": "saw",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"sawcreated\""
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 407969975197502,
+													"parameters": {
+														"audio-file": "Chakram_loop",
+														"loop": "looping",
+														"volume": "-28",
+														"object": "saw",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"saw\" & saw.UID"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "saw",
+													"sid": 981338866974050,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "clamp(data.Get(\"saw\") * 2 + 3, 4, 15)",
+														"type": "once",
+														"tag": "\"destroy\""
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "saw",
+													"sid": 880525007175076,
+													"behaviorType": "Rotate",
+													"parameters": {
+														"speed": "-(data.Get(\"saw\") * 30 + 360)"
+													}
+												}
+											],
+											"sid": 755941984553713
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "creep",
+													"sid": 970143171257900,
+													"parameters": {
+														"which": "nearest",
+														"x": "saw.X",
+														"y": "saw.Y"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-two-properties",
+													"objectClass": "saw",
+													"sid": 819608998590485,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "position",
+														"end-x": "creep.X",
+														"end-y": "creep.Y",
+														"time": "0.75",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "saw",
+													"sid": 123290735883405,
+													"parameters": {
+														"scale": "0"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "saw",
+													"sid": 771000538505702,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "scale",
+														"end-x": "1",
+														"end-y": "1",
+														"time": "0.5",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 655159650557143
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "saw",
+											"sid": 856425789252251,
+											"parameters": {
+												"object": "creep"
+											}
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 188384898677878,
+											"parameters": {
+												"interval-seconds": "0.165"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "creep",
+											"sid": 233560917366450,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "min(data.Get(\"saw\") * 4, 40) "
+											}
+										},
+										{
+											"callFunction": "creep_hp_update",
+											"sid": 463707136280223
+										},
+										{
+											"callFunction": "creep_spawn_blood",
+											"sid": 144167612379751
+										}
+									],
+									"sid": 770662785145681,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 241631730092518,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"Timbersaw_attack_gore\" & str(choose(1,2,3))",
+														"loop": "not-looping",
+														"volume": "-30",
+														"object": "creep",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"creep\""
+													}
+												}
+											],
+											"sid": 279911058767683
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "saw",
+											"sid": 193195101605211,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"destroy\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 244094095182949,
+											"parameters": {
+												"tag": "\"saw\"&saw.UID"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "saw",
+											"sid": 534069396068784,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "scale",
+												"end-x": "0",
+												"end-y": "0",
+												"time": "0.45",
+												"ease": "easeinback",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										}
+									],
+									"sid": 385549398619361
+								}
+							],
+							"sid": 663390654686607
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Bomb",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "bomb",
+											"sid": 166564432342557,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"boom\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "bomb",
+											"sid": 987239166096294,
+											"parameters": {
+												"object": "explosion",
+												"layer": "\"bg\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "bomb",
+											"sid": 115394566193630,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"size\"",
+												"property": "size",
+												"end-x": "0",
+												"end-y": "0",
+												"time": "0.25",
+												"ease": "default",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "play-at-object-by-name",
+											"objectClass": "Audio",
+											"sid": 922088041398862,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "str(\"Land_Mines_explode\" & choose(1,2))",
+												"loop": "not-looping",
+												"volume": "-15",
+												"object": "explosion",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"explosion\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "explosion",
+											"sid": 772998395013089,
+											"parameters": {
+												"instance-variable": "dmg",
+												"value": "data.Get(\"bomb\") * 5 + 15"
+											}
+										}
+									],
+									"sid": 744094344668365
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "bomb",
+											"sid": 630502223694968
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "bomb",
+											"sid": 935520288697518,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "1",
+												"type": "once",
+												"tag": "\"boom\""
+											}
+										}
+									],
+									"sid": 730314610502231,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "modifier",
+											"type": "number",
+											"initialValue": "45",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 398294126578401
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-screen",
+													"objectClass": "creep",
+													"sid": 630144944751605
+												},
+												{
+													"id": "pick-random-instance",
+													"objectClass": "System",
+													"sid": 736704323699580,
+													"parameters": {
+														"object": "creep"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-scale",
+													"objectClass": "bomb",
+													"sid": 920311285484220,
+													"parameters": {
+														"scale": "0"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "bomb",
+													"sid": 613614771636344,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"position\"",
+														"property": "position",
+														"end-x": "creep.X + random(-modifier, modifier)",
+														"end-y": "creep.Y +  random(-modifier, modifier)",
+														"time": "2.5",
+														"ease": "easeoutsine",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "bomb",
+													"sid": 661447798626528,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"scale\"",
+														"property": "scale",
+														"end-x": "0.6",
+														"end-y": "0.6",
+														"time": "0.5",
+														"ease": "easeoutbounce",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "bomb",
+													"sid": 504634719513736,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"angle\"",
+														"property": "offsetAngle",
+														"end-value": "random(360)",
+														"time": "1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 409397003213941
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "explosion",
+											"sid": 435033195185523,
+											"parameters": {
+												"object": "creep"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "explosion",
+											"sid": 789967541388167,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "creep",
+											"sid": 970578230168518,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "explosion.dmg"
+											}
+										},
+										{
+											"callFunction": "creep_spawn_blood",
+											"sid": 779523411410779
+										},
+										{
+											"callFunction": "creep_hp_update",
+											"sid": 913036360807028
+										}
+									],
+									"sid": 245642728477638
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-any-animation-finished",
+											"objectClass": "explosion",
+											"sid": 699455441174948
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "explosion",
+											"sid": 323135444213628,
+											"parameters": {
+												"instance-variable": "active",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 333074208500863
+								}
+							],
+							"sid": 496960202758940
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Spear",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "spear",
+											"sid": 544543431652272,
+											"parameters": {
+												"object": "creep"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-at-object-by-name",
+											"objectClass": "Audio",
+											"sid": 664705202160449,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"Timbersaw_attack_gore\" & str(choose(1,2,3))",
+												"loop": "not-looping",
+												"volume": "-30",
+												"object": "creep",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"creep\""
+											}
+										},
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "creep",
+											"sid": 839496093511805,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "spear.dmg"
+											}
+										},
+										{
+											"callFunction": "creep_spawn_blood",
+											"sid": 815223863391449
+										},
+										{
+											"callFunction": "creep_hp_update",
+											"sid": 635232695678027
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spear",
+											"sid": 590903775611551,
+											"parameters": {
+												"instance-variable": "dmg",
+												"value": "int(Self.dmg * 0.8)"
+											}
+										},
+										{
+											"id": "set-distance-travelled",
+											"objectClass": "spear",
+											"sid": 255068753101897,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"distance": "Self.Bullet.DistanceTravelled * 1.25"
+											}
+										}
+									],
+									"sid": 112851807249232
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-distance-travelled",
+											"objectClass": "spear",
+											"sid": 209228905576357,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 4,
+												"distance": "750"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "spear",
+											"sid": 414036851815014,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "scale",
+												"end-x": "0",
+												"end-y": "0",
+												"time": "0.25",
+												"ease": "default",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										}
+									],
+									"sid": 736328812539508
+								}
+							],
+							"sid": 251695303717254
+						}
+					],
+					"sid": 554251761790213
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Health",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "pudge_hp_update",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 620156788190834,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "pudge",
+											"sid": 132453623035557,
+											"parameters": {
+												"child": "hp_bar_frame",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "pudge",
+											"sid": 586469929692040,
+											"parameters": {
+												"child": "hp_bar",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-width",
+											"objectClass": "hp_bar",
+											"sid": 910500008891915,
+											"parameters": {
+												"width": "hp_bar_frame.Width * (pudge.HP / pudge.MAX_HP)"
+											}
+										}
+									],
+									"sid": 880582269407039
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "melee_hit",
+									"sid": 764557997606497,
+									"parameters": {
+										"object": "pudge"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "melee_hit",
+									"sid": 745867927843853,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "pudge",
+									"sid": 146663268808722,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "melee_hit.damage"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "melee_hit",
+									"sid": 112875074543787,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "pudge_hp_update",
+									"sid": 249208981755729
+								}
+							],
+							"sid": 280174909056818
+						}
+					],
+					"sid": 225923838000876
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Turret",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-shoot",
+									"objectClass": "hook_starter",
+									"sid": 544754980519126,
+									"behaviorType": "Turret"
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "data",
+									"sid": 621918363269345,
+									"parameters": {
+										"key": "\"hook\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "hook_shoot",
+									"sid": 584126991710686,
+									"parameters": [
+										"hook_starter.Angle"
+									]
+								}
+							],
+							"sid": 181520038579446
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "hook_starter",
+									"sid": 575011476385861
+								}
+							],
+							"actions": [
+								{
+									"id": "add-object-to-target",
+									"objectClass": "hook_starter",
+									"sid": 790886537053946,
+									"behaviorType": "Turret",
+									"parameters": {
+										"target": "creep"
+									}
+								}
+							],
+							"sid": 449649085719349
+						}
+					],
+					"sid": 474740085031776
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Hook",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "hook_shoot",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "shoot_angle",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 578855944302640
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 703049890846074,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "hook",
+											"sid": 899435260435569,
+											"parameters": {
+												"instance-variable": "is_hooking"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "hook",
+											"sid": 464438029888263,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "hook",
+											"sid": 335198856847879,
+											"parameters": {
+												"object": "hook_starter",
+												"image-point-optional": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "hook",
+											"sid": 712239700448730,
+											"parameters": {
+												"angle": "shoot_angle"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "hook",
+											"sid": 763694839374102,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-distance-travelled",
+											"objectClass": "hook",
+											"sid": 994565381396850,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"distance": "0"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "hook",
+											"sid": 825056003030772,
+											"parameters": {
+												"instance-variable": "is_hooking",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 640699105558831,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-width",
+													"objectClass": "rope",
+													"sid": 879483378452171,
+													"parameters": {
+														"width": "0"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "pudge",
+													"sid": 568010442368515,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 273745840027898
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 533996196796896,
+													"parameters": {
+														"tag": "\"chain\""
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 682509490156328,
+													"parameters": {
+														"audio-file": "Meat_Hook_chain",
+														"loop": "not-looping",
+														"volume": "-20",
+														"stereo-pan": "0",
+														"tag-optional": "\"chain\""
+													}
+												}
+											],
+											"sid": 673023953585141
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "hook_stop",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 656212483073554,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "hook",
+											"sid": 817118513408174,
+											"parameters": {
+												"object": "hook_starter",
+												"image-point-optional": "0"
+											}
+										},
+										{
+											"id": "set-distance-travelled",
+											"objectClass": "hook",
+											"sid": 296361290188752,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"distance": "0"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "hook",
+											"sid": 651579637484622,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "hook",
+											"sid": 745925464748845,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "rope",
+											"sid": 209217411279949,
+											"parameters": {
+												"width": "0"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "pudge",
+											"sid": 221452285618758,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 435280482787745,
+											"parameters": {
+												"tag": "\"chain\""
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "hook",
+											"sid": 135760733649671,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "data.Get(\"hook_cooldown\")",
+												"type": "once",
+												"tag": "\"cooldown\""
+											}
+										}
+									],
+									"sid": 987992938587401
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 343013648925080
+								}
+							],
+							"actions": [],
+							"sid": 131805495877012,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-enabled",
+											"objectClass": "hook",
+											"sid": 627282395298266,
+											"behaviorType": "Bullet"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "rope",
+											"sid": 460885487332365,
+											"parameters": {
+												"object": "hook",
+												"image-point-optional": "0"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "rope",
+											"sid": 992255479265094,
+											"parameters": {
+												"width": "distance(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "rope",
+											"sid": 325068354091489,
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
+											}
+										}
+									],
+									"sid": 756092631398429
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "hook",
+											"sid": 886545956036533,
+											"parameters": {
+												"instance-variable": "is_hooking"
+											}
+										},
+										{
+											"id": "compare-distance-travelled",
+											"objectClass": "hook",
+											"sid": 480494805773152,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 5,
+												"distance": "500"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 690929948356094,
+											"parameters": {
+												"seconds": "0.75"
+											}
+										},
+										{
+											"callFunction": "hook_stop",
+											"sid": 746893858175093
+										}
+									],
+									"sid": 386056724677663
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "hook",
+											"sid": 906758242388063,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"cooldown\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "hook",
+											"sid": 580267924513950,
+											"parameters": {
+												"instance-variable": "is_hooking",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 991947775150894
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "hook",
+									"sid": 823455216498162,
+									"parameters": {
+										"object": "creep"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 998505568697334,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "hook",
+											"sid": 417907648622443,
+											"parameters": {
+												"instance-variable": "is_hooking"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 311547651319314,
+											"parameters": {
+												"object": "creep"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "creep",
+											"sid": 254161512240652,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "data.GetDefault(\"hook_dmg\", 0)"
+											}
+										},
+										{
+											"callFunction": "creep_spawn_blood",
+											"sid": 618513643086829
+										},
+										{
+											"callFunction": "creep_hp_update",
+											"sid": 934477821254824
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 424893573693250,
+											"parameters": {
+												"tag": "\"impact\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 677315276109615,
+											"parameters": {
+												"audio-file": "Meat_Hook_impact",
+												"loop": "not-looping",
+												"volume": "-20",
+												"stereo-pan": "0",
+												"tag-optional": "\"impact\""
+											}
+										},
+										{
+											"callFunction": "hook_stop",
+											"sid": 502504376111957
+										}
+									],
+									"sid": 792305671867971
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "hook",
+									"sid": 770869725681028
+								}
+							],
+							"actions": [],
+							"sid": 400435203014300,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "hook_starter",
+											"sid": 898062740179841,
+											"parameters": {
+												"object": "pudge",
+												"image-point-optional": "1"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "hook_starter",
+											"sid": 333560218303220,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "pudge",
+												"x": true,
+												"y": true,
+												"angle": false,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 764627819557313
+								}
+							]
+						}
+					],
+					"sid": 344555952916511
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 557977775524737,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pudge",
+									"sid": 132118104941352,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 948000673221658
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 235316333549292,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pudge",
+									"sid": 859750605751750,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 255632302628763
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 435473318307594,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pudge",
+									"sid": 976531825295089,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 126806829317665
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 801727877547959,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pudge",
+									"sid": 778641636298505,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 256343673826973
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "pudge",
+									"sid": 853277654538626,
+									"behaviorType": "8Direction"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "pudge",
+									"sid": 566918013903418,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								}
+							],
+							"sid": 705436919875142
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 477110976039088
+								}
+							],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "pudge",
+									"sid": 824924421862898,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								}
+							],
+							"sid": 844778517690293
+						}
+					],
+					"sid": 481816244838931
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Camera",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 705379355727039
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 421355393913969,
+									"parameters": {
+										"x": "lerp(scrollx, pudge.X, dt * 5)",
+										"y": "lerp(scrolly, pudge.Y, dt * 5)"
+									}
+								}
+							],
+							"sid": 538404166002849
+						}
+					],
+					"sid": 948686169642826
+				}
+			],
+			"sid": 274174824435988
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Creeps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Creeps - misc",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "creep",
+									"sid": 240940291309534,
+									"parameters": {
+										"instance-variable": "HP",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "creep",
+									"sid": 320927610621604,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 741329756636357,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "creep",
+											"sid": 607752791431256,
+											"parameters": {
+												"instance-variable": "is_alive"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "creep_die",
+											"sid": 783189776304339
+										}
+									],
+									"sid": 937868399578585
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 581417579617286,
+									"parameters": {
+										"interval-seconds": "spawn_rate"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "creep_create_new",
+									"sid": 855068024103111
+								}
+							],
+							"sid": 857244461918348
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 817118594316319,
+									"parameters": {
+										"object": "creep"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "creep",
+									"sid": 496602217337341,
+									"parameters": {
+										"instance-variable": "is_alive"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 402666462519824,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "creep",
+											"sid": 479417931890123,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, pudge.X, pudge.Y)"
+											}
+										}
+									],
+									"sid": 522333402248959
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "creep",
+											"sid": 223386265296470,
+											"parameters": {
+												"object": "enemy"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "creep",
+											"sid": 799169775649227,
+											"parameters": {
+												"angle": "angle(Self.X, Self.X, enemy.X, enemy.Y)",
+												"distance": "random(-1.5, -0.5)"
+											}
+										}
+									],
+									"sid": 737276236150032
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 645730007799524,
+											"parameters": {
+												"animation": "\"simple\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 454482444708600,
+											"parameters": {
+												"animation": "\"big\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 674030715865293,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 871595790011713,
+													"parameters": {
+														"first-value": "distance(creep.X, creep.Y, pudge.X, pudge.Y)",
+														"comparison": 4,
+														"second-value": "150"
+													}
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "creep",
+													"sid": 368100406250217,
+													"parameters": {
+														"object": "pudge"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "creep",
+													"sid": 439454062144569,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "creep",
+													"sid": 135944093147449,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "active"
+													}
+												}
+											],
+											"sid": 575956159519891,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "creep",
+															"sid": 721777595857134,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-timer",
+															"objectClass": "creep",
+															"sid": 729262979653485,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack\""
+															}
+														}
+													],
+													"sid": 346897123744974
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 960639862869457
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "creep",
+													"sid": 450289089337530,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "creep",
+													"sid": 905343583192980,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "inactive"
+													}
+												}
+											],
+											"sid": 174874334264327,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "creep",
+															"sid": 776694228659990,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack_cooldown\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "creep_attack",
+															"sid": 528735789783015
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "creep",
+															"sid": 302743705782919,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "data.Get(\"creep_attack_rate\")",
+																"type": "once",
+																"tag": "\"attack_cooldown\""
+															}
+														}
+													],
+													"sid": 609241540500664
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 160049544502788
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 993018550955942,
+											"parameters": {
+												"animation": "\"magus\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 596446275751933,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 951939125221195,
+													"parameters": {
+														"first-value": "distance(creep.X, creep.Y, pudge.X, pudge.Y)",
+														"comparison": 4,
+														"second-value": "450"
+													}
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "creep",
+													"sid": 336463891095581,
+													"parameters": {
+														"object": "pudge"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "creep",
+													"sid": 703036010000266,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "creep",
+													"sid": 321147971624104,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "active"
+													}
+												}
+											],
+											"sid": 840569166392898,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "creep",
+															"sid": 482639988326767,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-timer",
+															"objectClass": "creep",
+															"sid": 571177415425923,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack\""
+															}
+														}
+													],
+													"sid": 123279027049607
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 149497133746273
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "creep",
+													"sid": 490205438609738,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "creep",
+													"sid": 982705252979579,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "inactive"
+													}
+												}
+											],
+											"sid": 841130906707426,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "creep",
+															"sid": 402077338941177,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"attack_cooldown\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "creep_attack",
+															"sid": 486739886763073
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "creep",
+															"sid": 312934002675495,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "data.Get(\"magus_attack_rate\")",
+																"type": "once",
+																"tag": "\"attack_cooldown\""
+															}
+														}
+													],
+													"sid": 243903855460096
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 110052732984802
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Creeps - functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "creep_spawn_blood",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 645284624612345,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 591958421940374,
+											"parameters": {
+												"first-value": "particle.Count",
+												"comparison": 3,
+												"second-value": "12"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "creep",
+											"sid": 318636852530319,
+											"parameters": {
+												"object": "particle",
+												"layer": "\"hook\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "particle",
+											"sid": 469398382649307,
+											"parameters": {
+												"color": "rgbEx(100, 12, 12)"
+											}
+										}
+									],
+									"sid": 685831861368343
+								}
+							]
+						},
+						{
+							"functionName": "creep_die",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 617627936418974,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "creep",
+											"sid": 885709531499350,
+											"parameters": {
+												"instance-variable": "is_alive"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "creep",
+											"sid": 333554421556689,
+											"parameters": {
+												"instance-variable": "is_alive",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "creep",
+											"sid": 324762191066315,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "creep",
+											"sid": 950072812277713,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "inactive"
+											}
+										},
+										{
+											"id": "stop-all-timers",
+											"objectClass": "creep",
+											"sid": 618138020176216,
+											"behaviorType": "Timer"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "creep",
+											"sid": 873636482720735,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"death\"",
+												"property": "scale",
+												"end-x": "0",
+												"end-y": "0",
+												"time": "0.25",
+												"ease": "easeoutbounce",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										}
+									],
+									"sid": 270189835855569,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "remove ui"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 913283365095334,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "creep",
+															"sid": 140940687119212,
+															"parameters": {
+																"child": "hp_bar_frame",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "hp_bar_frame",
+															"sid": 472054625032041
+														}
+													],
+													"sid": 392173458832597
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "creep",
+															"sid": 736621122602259,
+															"parameters": {
+																"child": "hp_bar",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "hp_bar",
+															"sid": 418690279646711
+														}
+													],
+													"sid": 273259871535756
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 769128159376351,
+													"parameters": {
+														"first-value": "random(100)",
+														"comparison": 2,
+														"second-value": "81"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "creep",
+													"sid": 158851121552698,
+													"parameters": {
+														"object": "coin",
+														"layer": "\"chars\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												}
+											],
+											"sid": 270652449675463
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "debug_update_text",
+													"sid": 654220424009004
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 297916613581535,
+													"parameters": {
+														"variable": "enemy_destroyed",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 840552679507159
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "creep_hp_update",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 625312597677170,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "creep",
+											"sid": 367915323957779,
+											"parameters": {
+												"child": "hp_bar_frame",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "creep",
+											"sid": 718420242404590,
+											"parameters": {
+												"child": "hp_bar",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-width",
+											"objectClass": "hp_bar",
+											"sid": 890480548382029,
+											"parameters": {
+												"width": "clamp((hp_bar_frame.Width * (creep.HP / creep.MAX_HP)),0, hp_bar_frame.Width * (creep.HP / creep.MAX_HP))"
+											}
+										}
+									],
+									"sid": 836831518493438
+								}
+							]
+						},
+						{
+							"functionName": "creep_attack",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 990668639656728,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 229897301121866,
+											"parameters": {
+												"animation": "\"simple\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 563341280606038,
+											"parameters": {
+												"animation": "\"big\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "creep",
+											"sid": 936460113858888,
+											"parameters": {
+												"object": "melee_hit",
+												"layer": "\"hook\"",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "melee_hit",
+											"sid": 648562319760689,
+											"parameters": {
+												"x": "pudge.X",
+												"y": "pudge.Y"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "melee_hit",
+											"sid": 815509994291730,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "data.Get(\"creep_attack_dmg\")"
+											}
+										}
+									],
+									"sid": 948558094117189,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 553426500775756,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "str(\"Weapons_creep_shared_whoosh\" & choose(1,2,3))",
+														"loop": "not-looping",
+														"volume": "-20",
+														"object": "creep",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"creep_attack\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 948706548648957,
+													"parameters": {
+														"seconds": "random(0.05,0.15)"
+													}
+												},
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 702127475707579,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"Weapons_creep_shared_melee_impact\" & str(choose(1,2,3))",
+														"loop": "not-looping",
+														"volume": "-10",
+														"object": "melee_hit",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"creep\""
+													}
+												}
+											],
+											"sid": 657196624921342
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 197480544975902
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "creep",
+											"sid": 523862950751181,
+											"parameters": {
+												"animation": "\"magus\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "creep",
+											"sid": 740345088345960,
+											"parameters": {
+												"object": "ball",
+												"layer": "\"chars\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										}
+									],
+									"sid": 629952175505647
+								}
+							]
+						},
+						{
+							"functionName": "creep_create_new",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 510542401169645,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 387619731496339,
+											"parameters": {
+												"object-to-create": "creep",
+												"layer": "\"chars\"",
+												"x": "choose(ViewportLeft(\"chars\") - random(250), ViewportRight(\"chars\") + random(250)) ",
+												"y": "choose( ViewportTop(\"chars\") - random(250), ViewportBottom(\"chars\") + random(250))",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 794460460404901,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "bounce-off-object",
+													"objectClass": "creep",
+													"sid": 322484729279412,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"object": "creep"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "creep",
+													"sid": 280339425788780,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "random( data.Get(\"creep_speed\") * 0.5, data.Get(\"creep_speed\") * 1.5)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "creep",
+													"sid": 481130265726136,
+													"parameters": {
+														"instance-variable": "MAX_HP",
+														"value": "data.Get(\"creep_lvl\") * 20"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "creep",
+													"sid": 352839682586547,
+													"parameters": {
+														"instance-variable": "HP",
+														"value": "Self.MAX_HP"
+													}
+												}
+											],
+											"sid": 498916289669886
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 290439939884778,
+													"parameters": {
+														"first-value": "int(random(0, 2))",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "creep",
+													"sid": 802979148868798,
+													"disabled": true,
+													"parameters": {
+														"animation": "\"big\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "creep",
+													"sid": 888030327873818,
+													"parameters": {
+														"animation": "\"magus\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 501881158616368
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 201524115451777,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"callFunction": "debug_update_text",
+													"sid": 639500728313245
+												}
+											],
+											"sid": 938587651011964
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 116083739649378
+				}
+			],
+			"sid": 234874075083265
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Characters",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "characters",
+							"sid": 646535007766338
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 897167647504034,
+							"parameters": {
+								"seconds": "0"
+							}
+						}
+					],
+					"sid": 526233305516646,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "characters",
+									"sid": 741224147124368,
+									"parameters": {
+										"object": "shadow",
+										"layer": "0",
+										"image-point": "\"shadow\"",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "characters",
+									"sid": 339274323380483,
+									"parameters": {
+										"child": "shadow",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": false,
+										"transform-z-elevation": false,
+										"destroy-with-parent": true
+									}
+								}
+							],
+							"sid": 126020316192889
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 458095911282249,
+									"parameters": {
+										"object-to-create": "hp_bar_frame",
+										"layer": "\"gui\"",
+										"x": "characters.X",
+										"y": "characters.Y + 25",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "characters",
+									"sid": 390276158932175,
+									"parameters": {
+										"child": "hp_bar_frame",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": true,
+										"transform-z-elevation": true,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 691753980577533,
+									"parameters": {
+										"object-to-create": "hp_bar",
+										"layer": "\"gui\"",
+										"x": "hp_bar_frame.ImagePointX(1)",
+										"y": "hp_bar_frame.y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "characters",
+									"sid": 886111834754215,
+									"parameters": {
+										"child": "hp_bar",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": true,
+										"transform-z-elevation": true,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "hp_bar",
+									"sid": 319467698886276
+								}
+							],
+							"sid": 782458694729075
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 756627067184603,
+							"parameters": {
+								"object": "characters",
+								"expression": "characters.y",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "characters",
+							"sid": 471179209105665
+						}
+					],
+					"sid": 394044725338410
+				}
+			],
+			"sid": 404611386112720
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "debug_update_text",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "creep_count",
+							"sid": 559946636741699,
+							"parameters": {
+								"text": "creep.Count"
+							}
+						}
+					],
+					"sid": 451993295946939
+				}
+			],
+			"sid": 652947112105398
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Coin",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "pudge",
+							"sid": 142918625620041,
+							"parameters": {
+								"object": "coin"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "coin",
+							"sid": 894280797592091,
+							"parameters": {
+								"instance-variable": "is_active"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "coin",
+							"sid": 456011922827068,
+							"parameters": {
+								"instance-variable": "is_active",
+								"value": "false"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 742689908736293,
+							"parameters": {
+								"variable": "gold",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 813615956019960,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"ring\"",
+								"loop": "not-looping",
+								"volume": "-random(5,15)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 775399472953411,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "coin",
+									"sid": 768119204707026,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"collecting\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "coin",
+									"sid": 504021632211275,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"collecting\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.25",
+										"ease": "default",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								}
+							],
+							"sid": 457351980786150
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "coin",
+							"sid": 487106166319484
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "coin",
+							"sid": 783360520592430,
+							"parameters": {
+								"scale": "0"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "coin",
+							"sid": 867367910779843,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "0.87",
+								"end-y": "0.87",
+								"time": "0.25",
+								"ease": "easeoutbounce",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 400933106853799
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 620659837650277,
+							"parameters": {
+								"object": "coin"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "coin",
+							"sid": 536172758661023
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 111411477348975,
+							"parameters": {
+								"object": "coin",
+								"expression": "distance(pudge.X, pudge.Y, coin.X, coin.Y) < 145"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "coin",
+							"sid": 271995340000581,
+							"parameters": {
+								"x": "lerp(coin.X, pudge.X, dt * 3)",
+								"y": "lerp(coin.Y, pudge.y-35, dt * 3)"
+							}
+						}
+					],
+					"sid": 455056156726723
+				}
+			],
+			"sid": 412831788121790
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Projectile",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ball",
+							"sid": 798408501206545
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 590319046222761,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "ball",
+							"sid": 487952475804807,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Self.X,Self.Y,pudge.X,pudge.Y)"
+							}
+						},
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 347956198090873,
+							"parameters": {
+								"audio-file": "Shadow_Shaman_preattack",
+								"loop": "not-looping",
+								"volume": "-15",
+								"object": "ball",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 569170419534942,
+							"parameters": {
+								"audio-file": "Chen_projectile_launch",
+								"loop": "not-looping",
+								"volume": "-25",
+								"object": "ball",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 782328654757353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "ball",
+							"sid": 463387141529288,
+							"parameters": {
+								"instance-variable": "is_active"
+							}
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "ball",
+							"sid": 433507583706974,
+							"behaviorType": "Tween",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "ball",
+							"sid": 474480645892577
+						}
+					],
+					"sid": 435149734119540,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-distance-travelled",
+									"objectClass": "ball",
+									"sid": 115791728304904,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 4,
+										"distance": "750"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ball",
+									"sid": 210630605196569,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "ball",
+									"sid": 963921384979116,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 764359890317152
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ball",
+									"sid": 949770112413894,
+									"parameters": {
+										"object": "pudge"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "ball",
+									"sid": 802934953253209,
+									"parameters": {
+										"instance-variable": "is_active",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 288178111579012,
+									"parameters": {
+										"tag": "\"projhit\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 774568832276242,
+									"parameters": {
+										"audio-file": "Bane_projectile_impact",
+										"loop": "not-looping",
+										"volume": "-6",
+										"stereo-pan": "0",
+										"tag-optional": "\"projhit\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "pudge",
+									"sid": 709569022351015,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "ball.dmg"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ball",
+									"sid": 169524079428510,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.125",
+										"ease": "noease",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "ball",
+									"sid": 464365411032277,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"callFunction": "pudge_hp_update",
+									"sid": 457989665791605
+								}
+							],
+							"sid": 375001796344018
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ball",
+									"sid": 273458592972867,
+									"parameters": {
+										"object": "explosion"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ball",
+									"sid": 105116468171077
+								}
+							],
+							"sid": 925238726875506,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 911975376922497
+		}
+	],
+	"sid": 916318118090883
+}

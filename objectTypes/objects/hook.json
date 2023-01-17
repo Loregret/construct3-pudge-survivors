@@ -1,0 +1,70 @@
+{
+	"name": "hook",
+	"plugin-id": "Sprite",
+	"sid": 286402309185160,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "is_hooking",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 170977968743183
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 164857251730789
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 612678791413203
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 161,
+						"height": 100,
+						"originX": 0.062111801242236024,
+						"originY": 0.56,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2539356,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.27250003814697266,
+								0.47049687071616614,
+								0.06999998092651366,
+								0.9394410885639081,
+								0.025,
+								0.9394410885639066,
+								0.9649997711181639,
+								0,
+								0.8275000572204588
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 919305656136631,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

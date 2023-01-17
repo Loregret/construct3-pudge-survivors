@@ -1,0 +1,20 @@
+{
+	"name": "hp_bar",
+	"plugin-id": "TiledBg",
+	"sid": 103158063876212,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 11,
+		"height": 11,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5394823,
+		"useCollisionPoly": true
+	}
+}

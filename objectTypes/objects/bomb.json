@@ -1,0 +1,75 @@
+{
+	"name": "bomb",
+	"plugin-id": "Sprite",
+	"sid": 861056515058273,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 403445215943169
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 791551363703229
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 80,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2441895,
+						"collisionPoly": {
+							"points": [
+								0.4875,
+								0.37,
+								0.5,
+								0.34,
+								0.95,
+								0.01,
+								0.65,
+								0.5,
+								0.7125,
+								0.79,
+								0.5,
+								0.96,
+								0.1375,
+								0.9,
+								0.1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9375,
+								"y": 0.04
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 619134368883187,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

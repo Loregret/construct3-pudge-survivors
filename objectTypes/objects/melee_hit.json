@@ -1,0 +1,63 @@
+{
+	"name": "melee_hit",
+	"plugin-id": "Sprite",
+	"sid": 822289603524924,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 124904921947102
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 737995944645231
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 757542050428644
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 817682116993544
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 38,
+						"height": 91,
+						"originX": -1.9473684210526316,
+						"originY": 0.5714285714285713,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6731746,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 796772179362490,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

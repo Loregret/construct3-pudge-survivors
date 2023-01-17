@@ -1,0 +1,9 @@
+{
+	"name": "creep_count",
+	"plugin-id": "Text",
+	"sid": 938057929286726,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

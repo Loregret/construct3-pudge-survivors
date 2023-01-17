@@ -1,0 +1,573 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 31702,
+	"name": "Pudge Survivors",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Turret",
+			"name": "Turret",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "1636xtyqt0a",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "system"
+			},
+			{
+				"items": [
+					"hook",
+					"hook_starter",
+					"rope",
+					"shadow",
+					"coin",
+					"melee_hit",
+					"ball",
+					"bomb",
+					"explosion",
+					"particle",
+					"saw",
+					"spear"
+				],
+				"subfolders": [],
+				"name": "objects"
+			},
+			{
+				"items": [
+					"hp_bar",
+					"hp_bar_frame",
+					"store_bg",
+					"store_button",
+					"creep_count",
+					"bonus"
+				],
+				"subfolders": [],
+				"name": "ui"
+			},
+			{
+				"items": [
+					"TiledBackground"
+				],
+				"subfolders": [],
+				"name": "bg"
+			},
+			{
+				"items": [
+					"creep",
+					"pudge"
+				],
+				"subfolders": [],
+				"name": "characters"
+			},
+			{
+				"items": [
+					"data",
+					"upgrade"
+				],
+				"subfolders": [],
+				"name": "data"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"enemy",
+			"characters"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"game",
+			"resource"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"#game"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "Meat_Hook_chain.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 225866883442212,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Meat_Hook_impact.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 853426960864051,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_melee_impact1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 805971768472802,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_melee_impact2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 923545716763704,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_melee_impact3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 255462819754058,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_whoosh1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 452851292616935,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_whoosh2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 451819421235706,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Weapons_creep_shared_whoosh3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 455339744109981,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Gold.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 480340146453153,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Chakram_loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 718404377925527,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Timbersaw_attack_gore1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 648378871326041,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Timbersaw_attack_gore2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 589600722773941,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Timbersaw_attack_gore3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 547438123275271,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Land_Mines_explode1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 794931352308258,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Land_Mines_explode2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 373696092477698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Bomb_Place.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 737271631543306,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "gem.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 434769620000260,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ring.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 628283549450646,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Chen_projectile_launch.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 992736434348594,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Shadow_Shaman_preattack.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 828426714234386,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Bane_projectile_impact.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 820499493467533,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Silencer_projectile_launch1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 377183766918149,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 825416005194108,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 387656050498458,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 790302720232802,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 877214762681458,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 392108314289998,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 414699200518894,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 899567087941953,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders"
+	},
+	"viewportWidth": 1280,
+	"viewportHeight": 720,
+	"firstLayout": "game"
+}

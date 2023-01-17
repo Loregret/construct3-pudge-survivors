@@ -1,0 +1,236 @@
+{
+	"name": "creep",
+	"plugin-id": "Sprite",
+	"sid": 720041335636285,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 562617967511523
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 998364179579733
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 742970678602576
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 539766808756434
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 140,
+						"height": 128,
+						"originX": 0.6928571428571428,
+						"originY": 0.953125,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5392474,
+						"collisionPoly": {
+							"points": [
+								0.4047620864141557,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.3952382405598957,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "attack",
+								"x": 0.7,
+								"y": 0.453125
+							},
+							{
+								"name": "hp",
+								"x": 0.55,
+								"y": 1.265625
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 566031805580806,
+				"name": "simple",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 205,
+						"height": 202,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8967527,
+						"collisionPoly": {
+							"points": [
+								0.16909539981475763,
+								0.09830627732824042,
+								0.525177523927138,
+								0,
+								0.6798394566224143,
+								0.2543599537618737,
+								0.8165174436554492,
+								0.5173392973815149,
+								0.8380981784501389,
+								0.9016937226717595,
+								0.525177523927138,
+								1,
+								0.20506329113924052,
+								0.9016937226717595,
+								0,
+								0.5173392973815149
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "attack",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "hp",
+								"x": 0.5,
+								"y": 1.0643564356435644
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 158,
+						"height": 197,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1473961,
+						"collisionPoly": {
+							"points": [
+								0.2088607594936709,
+								0.14720812182741116,
+								0.5221518987341772,
+								0.04060913705583756,
+								0.6582278481012658,
+								0.28426395939086296,
+								0.7784810126582279,
+								0.5152284263959391,
+								0.7974683544303798,
+								0.8527918781725888,
+								0.5221518987341772,
+								0.9543147208121827,
+								0.24050632911392406,
+								0.8527918781725888,
+								0.056962025316455694,
+								0.5152284263959391
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "attack",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "hp",
+								"x": 0.5,
+								"y": 1.0643564356435644
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 663364866021370,
+				"name": "big",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 68,
+						"height": 141,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9852676,
+						"collisionPoly": {
+							"points": [
+								0.3235294117647059,
+								0.15602836879432624,
+								0.5,
+								0.014184397163120567,
+								0.75,
+								0.11347517730496454,
+								0.9411764705882353,
+								0.5,
+								0.9117647058823529,
+								0.9574468085106383,
+								0.5,
+								0.950354609929078,
+								0.29411764705882354,
+								0.851063829787234,
+								0.11764705882352941,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "attack",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "hp",
+								"x": 0.5147058823529411,
+								"y": 1.1418439716312057
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 600787588950273,
+				"name": "magus",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"name": "coin",
+	"plugin-id": "Sprite",
+	"sid": 997123317930667,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "is_active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 644557279750553
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 324635485117230
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6211287,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 567886758079417,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

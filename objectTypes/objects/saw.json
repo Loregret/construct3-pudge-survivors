@@ -1,0 +1,53 @@
+{
+	"name": "saw",
+	"plugin-id": "Sprite",
+	"sid": 210040400853550,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 446644515900822
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 290108742497695
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 257953728087794
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 45,
+						"height": 269,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9849422,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 597430133754558,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

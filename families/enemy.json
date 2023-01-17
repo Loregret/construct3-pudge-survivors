@@ -1,0 +1,11 @@
+{
+	"name": "enemy",
+	"plugin-id": "Sprite",
+	"sid": 942526844819810,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"creep"
+	]
+}

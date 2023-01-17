@@ -1,0 +1,34 @@
+{
+	"name": "characters",
+	"plugin-id": "Sprite",
+	"sid": 844379834499388,
+	"instanceVariables": [
+		{
+			"name": "HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 827401714640010
+		},
+		{
+			"name": "MAX_HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 853121608753164
+		},
+		{
+			"name": "is_alive",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 148912074284966
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"creep",
+		"pudge"
+	]
+}

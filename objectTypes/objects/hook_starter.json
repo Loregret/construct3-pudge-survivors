@@ -1,0 +1,48 @@
+{
+	"name": "hook_starter",
+	"plugin-id": "Sprite",
+	"sid": 723914251625434,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 567716256506350
+		},
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 500278135097868
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 31,
+						"height": 31,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3151139,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 893758573167101,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
