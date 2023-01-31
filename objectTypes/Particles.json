@@ -1,20 +1,20 @@
 {
-	"name": "store_button",
-	"plugin-id": "TiledBg",
-	"sid": 317492470838667,
+	"name": "Particles",
+	"plugin-id": "Particles",
+	"sid": 617123989969202,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 230,
-		"height": 230,
+		"width": 37,
+		"height": 37,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 9569009,
+		"imageSpriteId": 4830441,
 		"useCollisionPoly": true
 	}
 }

@@ -1,7 +1,7 @@
 {
-	"name": "spear",
+	"name": "bullet",
 	"plugin-id": "Sprite",
-	"sid": 700755269729781,
+	"sid": 451649275449149,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,19 +9,14 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 929665279808164
+			"sid": 292737340414941
 		}
 	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",
 			"name": "Bullet",
-			"sid": 519560784774635
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 153641765209744
+			"sid": 557251701989061
 		}
 	],
 	"effectTypes": [],
@@ -30,31 +25,19 @@
 			{
 				"frames": [
 					{
-						"width": 188,
-						"height": 40,
-						"originX": 0.5,
+						"width": 22,
+						"height": 8,
+						"originX": 0,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6291693,
-						"collisionPoly": {
-							"points": [
-								0,
-								0.22499990463256836,
-								1,
-								0.02500021457672119,
-								1,
-								0.9249992370605469,
-								0.007978885731798536,
-								0.7999997138977051
-							]
-						},
+						"imageSpriteId": 9050713,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 264776036077277,
+				"sid": 745629707897237,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

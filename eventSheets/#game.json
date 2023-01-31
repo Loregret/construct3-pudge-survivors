@@ -32,6 +32,16 @@
 			"sid": 710788577547022
 		},
 		{
+			"eventType": "variable",
+			"name": "is_showing_store",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 910921308014196
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -63,61 +73,61 @@
 					"sid": 626804421826480,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "hook"
-						},
-						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
-									"id": "add-key",
-									"objectClass": "data",
-									"sid": 683932241917462,
-									"disabled": true,
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 532983001471551,
 									"parameters": {
-										"key": "\"hook\"",
-										"value": "1"
+										"where": "back",
+										"value": "\"hook\"",
+										"axis": "x"
 									}
 								},
 								{
-									"id": "add-key",
-									"objectClass": "data",
-									"sid": 878816634766986,
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 653761933908409,
 									"parameters": {
-										"key": "\"hook_dmg\"",
-										"value": "75"
+										"where": "back",
+										"value": "\"saw\"",
+										"axis": "x"
 									}
 								},
 								{
-									"id": "add-key",
-									"objectClass": "data",
-									"sid": 515840456903654,
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 470777538021938,
 									"parameters": {
-										"key": "\"hook_range\"",
-										"value": "425"
+										"where": "back",
+										"value": "\"bomb\"",
+										"axis": "x"
 									}
 								},
 								{
-									"id": "add-key",
-									"objectClass": "data",
-									"sid": 178037306016854,
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 343640133224399,
 									"parameters": {
-										"key": "\"hook_rate\"",
-										"value": "2.5"
+										"where": "back",
+										"value": "\"spear\"",
+										"axis": "x"
 									}
 								},
 								{
-									"id": "add-key",
-									"objectClass": "data",
-									"sid": 285235644795114,
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 958911498822974,
 									"parameters": {
-										"key": "\"hook_cooldown\"",
-										"value": "1"
+										"where": "back",
+										"value": "\"turret\"",
+										"axis": "x"
 									}
 								}
 							],
-							"sid": 658674226718903
+							"sid": 491067138744468
 						},
 						{
 							"eventType": "comment",
@@ -150,9 +160,20 @@
 								{
 									"id": "add-key",
 									"objectClass": "data",
-									"sid": 817783787554185,
+									"sid": 456275395860900,
+									"disabled": true,
 									"parameters": {
 										"key": "\"spear\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 882757997716391,
+									"disabled": true,
+									"parameters": {
+										"key": "\"turret\"",
 										"value": "1"
 									}
 								}
@@ -160,87 +181,70 @@
 							"sid": 762480270555100
 						},
 						{
+							"eventType": "comment",
+							"text": "creeps"
+						},
+						{
 							"eventType": "block",
 							"conditions": [],
-							"actions": [
+							"actions": [],
+							"sid": 894566081135049,
+							"children": [
 								{
-									"id": "set-rate-of-fire",
-									"objectClass": "hook_starter",
-									"sid": 577444740176517,
-									"behaviorType": "Turret",
-									"parameters": {
-										"rate-of-fire": "data.Get(\"hook_rate\")"
-									}
-								},
-								{
-									"id": "set-range",
-									"objectClass": "hook_starter",
-									"sid": 519651110281065,
-									"behaviorType": "Turret",
-									"parameters": {
-										"range": "data.Get(\"hook_range\")"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-key",
+											"objectClass": "data",
+											"sid": 102794471828837,
+											"parameters": {
+												"key": "\"creep_lvl\"",
+												"value": "1"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "data",
+											"sid": 974685217018136,
+											"parameters": {
+												"key": "\"creep_speed\"",
+												"value": "100"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "data",
+											"sid": 857348129710629,
+											"parameters": {
+												"key": "\"creep_attack_rate\"",
+												"value": "1.85"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "data",
+											"sid": 273420631102084,
+											"parameters": {
+												"key": "\"creep_attack_dmg\"",
+												"value": "2"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "data",
+											"sid": 509800523909169,
+											"parameters": {
+												"key": "\"magus_attack_rate\"",
+												"value": "3.2"
+											}
+										}
+									],
+									"sid": 875018886805783
 								}
-							],
-							"sid": 268377578083846
+							]
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "creeps"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "add-key",
-							"objectClass": "data",
-							"sid": 813429343410441,
-							"parameters": {
-								"key": "\"creep_lvl\"",
-								"value": "1"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data",
-							"sid": 709425889327560,
-							"parameters": {
-								"key": "\"creep_speed\"",
-								"value": "100"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data",
-							"sid": 893903192510739,
-							"parameters": {
-								"key": "\"creep_attack_rate\"",
-								"value": "1.85"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data",
-							"sid": 526415134105279,
-							"parameters": {
-								"key": "\"creep_attack_dmg\"",
-								"value": "2"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data",
-							"sid": 402425439226274,
-							"parameters": {
-								"key": "\"magus_attack_rate\"",
-								"value": "3.2"
-							}
-						}
-					],
-					"sid": 241709362067394
 				},
 				{
 					"eventType": "block",
@@ -261,6 +265,25 @@
 						}
 					],
 					"sid": 719503627641572
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 906959996577822,
+							"parameters": {
+								"seconds": "0.15"
+							}
+						},
+						{
+							"callFunction": "show_store",
+							"sid": 387638018002643
+						}
+					],
+					"sid": 254944988866140
 				}
 			]
 		},
@@ -278,6 +301,68 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 338194044913308,
+									"parameters": {
+										"key": "\"hook\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 948245094246503,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-target",
+											"objectClass": "hook_starter",
+											"sid": 981361582316262,
+											"behaviorType": "Turret",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-object-to-target",
+											"objectClass": "hook_starter",
+											"sid": 766760566405332,
+											"behaviorType": "Turret",
+											"parameters": {
+												"target": "creep"
+											}
+										}
+									],
+									"sid": 794378879606073
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-shoot",
+											"objectClass": "hook_starter",
+											"sid": 865275263919487,
+											"behaviorType": "Turret"
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "hook_shoot",
+											"sid": 815989077950533,
+											"parameters": [
+												"hook_starter.Angle"
+											]
+										}
+									],
+									"sid": 762365153061698
+								}
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -558,10 +643,10 @@
 										{
 											"id": "start-timer",
 											"objectClass": "pudge",
-											"sid": 415548405261325,
+											"sid": 991071252625919,
 											"behaviorType": "Timer",
 											"parameters": {
-												"duration": "max(2 - data.Get(\"spear\") * 0.25, 0.25)",
+												"duration": "max(2 - data.Get(\"spear\") * 0.4, 0.25)",
 												"type": "once",
 												"tag": "\"spear\""
 											}
@@ -649,6 +734,590 @@
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 589188557474830,
+									"parameters": {
+										"key": "\"turret\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 866898677356802,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "pudge",
+											"sid": 140671270761515,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"turret\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "pudge",
+											"sid": 735019149373730,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "max(15 - (data.Get(\"turret\") * 2), 5)",
+												"type": "once",
+												"tag": "\"turret\""
+											}
+										}
+									],
+									"sid": 863486964014215
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "pudge",
+											"sid": 551987579374800,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"turret\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "create_turret",
+											"sid": 124369341994194
+										}
+									],
+									"sid": 335633792445977
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Hook",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"functionName": "hook_shoot",
+									"functionDescription": "",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "shoot_angle",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 578855944302640
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 806277080930163,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "hook",
+													"sid": 800600658047528,
+													"parameters": {
+														"instance-variable": "is_hooking"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "hook",
+													"sid": 157100367141285,
+													"parameters": {
+														"instance-variable": "is_hooking",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "hook",
+													"sid": 213311180023834,
+													"parameters": {
+														"instance-variable": "dmg",
+														"value": "data.Get(\"hook\") * 45"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "hook",
+													"sid": 682516318556645,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "hook",
+													"sid": 983192232637078,
+													"parameters": {
+														"object": "hook_starter",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "hook",
+													"sid": 440447878331132,
+													"parameters": {
+														"angle": "shoot_angle"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "hook",
+													"sid": 326347686225135,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "set-distance-travelled",
+													"objectClass": "hook",
+													"sid": 519828381211481,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"distance": "0"
+													}
+												},
+												{
+													"id": "set-rate-of-fire",
+													"objectClass": "hook_starter",
+													"sid": 727047640169179,
+													"behaviorType": "Turret",
+													"parameters": {
+														"rate-of-fire": "max(2.5 - (data.Get(\"hook\") * 0.5), 0.25)"
+													}
+												},
+												{
+													"id": "set-range",
+													"objectClass": "hook_starter",
+													"sid": 585714347272062,
+													"behaviorType": "Turret",
+													"parameters": {
+														"range": "450"
+													}
+												}
+											],
+											"sid": 307028125900163,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-width",
+															"objectClass": "rope",
+															"sid": 666057183481560,
+															"parameters": {
+																"width": "0"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "pudge",
+															"sid": 906788602059110,
+															"parameters": {
+																"frame-number": "1"
+															}
+														}
+													],
+													"sid": 123360863422292
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "stop",
+															"objectClass": "Audio",
+															"sid": 412113951100062,
+															"parameters": {
+																"tag": "\"chain\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 140511479191012,
+															"parameters": {
+																"audio-file": "Meat_Hook_chain",
+																"loop": "not-looping",
+																"volume": "-28",
+																"stereo-pan": "0",
+																"tag-optional": "\"chain\""
+															}
+														}
+													],
+													"sid": 429550744973459
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "hook_stop",
+									"functionDescription": "",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 773268861596239,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "hook",
+													"sid": 601430504676131,
+													"parameters": {
+														"object": "hook_starter",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "set-distance-travelled",
+													"objectClass": "hook",
+													"sid": 967843115687583,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"distance": "0"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "hook",
+													"sid": 687037103139608,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "hook",
+													"sid": 171600574219028,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "rope",
+													"sid": 451382007930412,
+													"parameters": {
+														"width": "0"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "pudge",
+													"sid": 715504423514692,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 573719020412188,
+													"parameters": {
+														"tag": "\"chain\""
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "hook",
+													"sid": 456003392906974,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "0.75",
+														"type": "once",
+														"tag": "\"cooldown\""
+													}
+												}
+											],
+											"sid": 927069757878264
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 172537311027743
+										}
+									],
+									"actions": [],
+									"sid": 668145259194176,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-enabled",
+													"objectClass": "hook",
+													"sid": 145773165562608,
+													"behaviorType": "Bullet"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "rope",
+													"sid": 679613106432007,
+													"parameters": {
+														"object": "hook",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "rope",
+													"sid": 408124664237196,
+													"parameters": {
+														"width": "distance(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "rope",
+													"sid": 395010429205797,
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
+													}
+												}
+											],
+											"sid": 181897378120526
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "hook",
+													"sid": 152812368490474,
+													"parameters": {
+														"instance-variable": "is_hooking"
+													}
+												},
+												{
+													"id": "compare-distance-travelled",
+													"objectClass": "hook",
+													"sid": 533853303057924,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"comparison": 5,
+														"distance": "500"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 733867279397206,
+													"parameters": {
+														"seconds": "0.75"
+													}
+												},
+												{
+													"callFunction": "hook_stop",
+													"sid": 698342966837925
+												}
+											],
+											"sid": 412062949411868
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "hook",
+													"sid": 143431326029148,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"cooldown\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "hook",
+													"sid": 290184704955708,
+													"parameters": {
+														"instance-variable": "is_hooking",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 385407426169068
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "hook",
+											"sid": 928058051109083,
+											"parameters": {
+												"object": "creep"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 755873692337322,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "hook",
+													"sid": 202545959496933,
+													"parameters": {
+														"instance-variable": "is_hooking"
+													}
+												},
+												{
+													"id": "pick-random-instance",
+													"objectClass": "System",
+													"sid": 714788249506221,
+													"parameters": {
+														"object": "creep"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "creep",
+													"sid": 592020748890560,
+													"parameters": {
+														"instance-variable": "HP",
+														"value": "hook.dmg"
+													}
+												},
+												{
+													"callFunction": "creep_spawn_blood",
+													"sid": 670458596820686
+												},
+												{
+													"callFunction": "creep_hp_update",
+													"sid": 524608530637932
+												},
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 990976425888531,
+													"parameters": {
+														"tag": "\"impact\""
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 705627184905824,
+													"parameters": {
+														"audio-file": "Meat_Hook_impact",
+														"loop": "not-looping",
+														"volume": "-28",
+														"stereo-pan": "0",
+														"tag-optional": "\"impact\""
+													}
+												},
+												{
+													"callFunction": "hook_stop",
+													"sid": 602391212549195
+												}
+											],
+											"sid": 412344537634342
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "hook",
+											"sid": 175438437160192
+										}
+									],
+									"actions": [],
+									"sid": 547492796585735,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "hook_starter",
+													"sid": 398036620707180,
+													"parameters": {
+														"object": "pudge",
+														"image-point-optional": "1"
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "pudge",
+													"sid": 648664989135630,
+													"parameters": {
+														"child": "hook_starter",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-z-elevation": false,
+														"destroy-with-parent": false
+													}
+												}
+											],
+											"sid": 816239114802383
+										}
+									]
+								}
+							],
+							"sid": 483835898078754
 						},
 						{
 							"eventType": "group",
@@ -755,7 +1424,8 @@
 														"ease": "default",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{
@@ -780,7 +1450,8 @@
 														"ease": "default",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												}
 											],
@@ -890,7 +1561,8 @@
 												"ease": "easeinback",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -945,7 +1617,8 @@
 												"ease": "default",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -1050,7 +1723,8 @@
 														"ease": "easeoutsine",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{
@@ -1067,7 +1741,8 @@
 														"ease": "easeoutbounce",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{
@@ -1083,7 +1758,8 @@
 														"ease": "default",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												}
 											],
@@ -1168,6 +1844,32 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "on-timer",
+											"objectClass": "creep",
+											"sid": 439654054052888,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"spearslowdown\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-speed",
+											"objectClass": "creep",
+											"sid": 687949334192551,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Self.Bullet.Speed * 1.5"
+											}
+										}
+									],
+									"sid": 663020536722865
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "on-collision-with-another-object",
 											"objectClass": "spear",
 											"sid": 544543431652272,
@@ -1229,7 +1931,36 @@
 											}
 										}
 									],
-									"sid": 112851807249232
+									"sid": 112851807249232,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "creep",
+													"sid": 759997109075859,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "2",
+														"type": "once",
+														"tag": "\"spearslowdown\""
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "creep",
+													"sid": 832201186306651,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "Self.Bullet.Speed / 1.5"
+													}
+												}
+											],
+											"sid": 298258262030576
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1260,7 +1991,8 @@
 												"ease": "default",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -1376,559 +2108,6 @@
 						}
 					],
 					"sid": 225923838000876
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Turret",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-shoot",
-									"objectClass": "hook_starter",
-									"sid": 544754980519126,
-									"behaviorType": "Turret"
-								},
-								{
-									"id": "compare-value",
-									"objectClass": "data",
-									"sid": 621918363269345,
-									"parameters": {
-										"key": "\"hook\"",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "hook_shoot",
-									"sid": 584126991710686,
-									"parameters": [
-										"hook_starter.Angle"
-									]
-								}
-							],
-							"sid": 181520038579446
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-created",
-									"objectClass": "hook_starter",
-									"sid": 575011476385861
-								}
-							],
-							"actions": [
-								{
-									"id": "add-object-to-target",
-									"objectClass": "hook_starter",
-									"sid": 790886537053946,
-									"behaviorType": "Turret",
-									"parameters": {
-										"target": "creep"
-									}
-								}
-							],
-							"sid": 449649085719349
-						}
-					],
-					"sid": 474740085031776
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Hook",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"functionName": "hook_shoot",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "shoot_angle",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 578855944302640
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 703049890846074,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "hook",
-											"sid": 899435260435569,
-											"parameters": {
-												"instance-variable": "is_hooking"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "hook",
-											"sid": 464438029888263,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "hook",
-											"sid": 335198856847879,
-											"parameters": {
-												"object": "hook_starter",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "hook",
-											"sid": 712239700448730,
-											"parameters": {
-												"angle": "shoot_angle"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "hook",
-											"sid": 763694839374102,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "set-distance-travelled",
-											"objectClass": "hook",
-											"sid": 994565381396850,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"distance": "0"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "hook",
-											"sid": 825056003030772,
-											"parameters": {
-												"instance-variable": "is_hooking",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 640699105558831,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-width",
-													"objectClass": "rope",
-													"sid": 879483378452171,
-													"parameters": {
-														"width": "0"
-													}
-												},
-												{
-													"id": "set-animation-frame",
-													"objectClass": "pudge",
-													"sid": 568010442368515,
-													"parameters": {
-														"frame-number": "1"
-													}
-												}
-											],
-											"sid": 273745840027898
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "stop",
-													"objectClass": "Audio",
-													"sid": 533996196796896,
-													"parameters": {
-														"tag": "\"chain\""
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 682509490156328,
-													"parameters": {
-														"audio-file": "Meat_Hook_chain",
-														"loop": "not-looping",
-														"volume": "-20",
-														"stereo-pan": "0",
-														"tag-optional": "\"chain\""
-													}
-												}
-											],
-											"sid": 673023953585141
-										}
-									]
-								}
-							]
-						},
-						{
-							"functionName": "hook_stop",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 656212483073554,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "hook",
-											"sid": 817118513408174,
-											"parameters": {
-												"object": "hook_starter",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-distance-travelled",
-											"objectClass": "hook",
-											"sid": 296361290188752,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"distance": "0"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "hook",
-											"sid": 651579637484622,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "hook",
-											"sid": 745925464748845,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-width",
-											"objectClass": "rope",
-											"sid": 209217411279949,
-											"parameters": {
-												"width": "0"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "pudge",
-											"sid": 221452285618758,
-											"parameters": {
-												"frame-number": "0"
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 435280482787745,
-											"parameters": {
-												"tag": "\"chain\""
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "hook",
-											"sid": 135760733649671,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "data.Get(\"hook_cooldown\")",
-												"type": "once",
-												"tag": "\"cooldown\""
-											}
-										}
-									],
-									"sid": 987992938587401
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 343013648925080
-								}
-							],
-							"actions": [],
-							"sid": 131805495877012,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-enabled",
-											"objectClass": "hook",
-											"sid": 627282395298266,
-											"behaviorType": "Bullet"
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "rope",
-											"sid": 460885487332365,
-											"parameters": {
-												"object": "hook",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-width",
-											"objectClass": "rope",
-											"sid": 992255479265094,
-											"parameters": {
-												"width": "distance(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "rope",
-											"sid": 325068354091489,
-											"parameters": {
-												"angle": "angle(Self.X, Self.Y, hook_starter.X, hook_starter.Y)"
-											}
-										}
-									],
-									"sid": 756092631398429
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "hook",
-											"sid": 886545956036533,
-											"parameters": {
-												"instance-variable": "is_hooking"
-											}
-										},
-										{
-											"id": "compare-distance-travelled",
-											"objectClass": "hook",
-											"sid": 480494805773152,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"comparison": 5,
-												"distance": "500"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 690929948356094,
-											"parameters": {
-												"seconds": "0.75"
-											}
-										},
-										{
-											"callFunction": "hook_stop",
-											"sid": 746893858175093
-										}
-									],
-									"sid": 386056724677663
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-timer",
-											"objectClass": "hook",
-											"sid": 906758242388063,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"cooldown\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "hook",
-											"sid": 580267924513950,
-											"parameters": {
-												"instance-variable": "is_hooking",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 991947775150894
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "hook",
-									"sid": 823455216498162,
-									"parameters": {
-										"object": "creep"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 998505568697334,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "hook",
-											"sid": 417907648622443,
-											"parameters": {
-												"instance-variable": "is_hooking"
-											}
-										},
-										{
-											"id": "pick-random-instance",
-											"objectClass": "System",
-											"sid": 311547651319314,
-											"parameters": {
-												"object": "creep"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "subtract-from-instvar",
-											"objectClass": "creep",
-											"sid": 254161512240652,
-											"parameters": {
-												"instance-variable": "HP",
-												"value": "data.GetDefault(\"hook_dmg\", 0)"
-											}
-										},
-										{
-											"callFunction": "creep_spawn_blood",
-											"sid": 618513643086829
-										},
-										{
-											"callFunction": "creep_hp_update",
-											"sid": 934477821254824
-										},
-										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 424893573693250,
-											"parameters": {
-												"tag": "\"impact\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 677315276109615,
-											"parameters": {
-												"audio-file": "Meat_Hook_impact",
-												"loop": "not-looping",
-												"volume": "-20",
-												"stereo-pan": "0",
-												"tag-optional": "\"impact\""
-											}
-										},
-										{
-											"callFunction": "hook_stop",
-											"sid": 502504376111957
-										}
-									],
-									"sid": 792305671867971
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-created",
-									"objectClass": "hook",
-									"sid": 770869725681028
-								}
-							],
-							"actions": [],
-							"sid": 400435203014300,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "hook_starter",
-											"sid": 898062740179841,
-											"parameters": {
-												"object": "pudge",
-												"image-point-optional": "1"
-											}
-										},
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "hook_starter",
-											"sid": 333560218303220,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "pudge",
-												"x": true,
-												"y": true,
-												"angle": false,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										}
-									],
-									"sid": 764627819557313
-								}
-							]
-						}
-					],
-					"sid": 344555952916511
 				},
 				{
 					"eventType": "group",
@@ -2220,6 +2399,16 @@
 									"sid": 496602217337341,
 									"parameters": {
 										"instance-variable": "is_alive"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 122461218217722,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 0,
+										"second-value": "1.0"
 									}
 								}
 							],
@@ -2730,7 +2919,8 @@
 												"ease": "easeoutbounce",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -3126,9 +3316,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 290439939884778,
+													"sid": 571301454939356,
 													"parameters": {
-														"first-value": "int(random(0, 2))",
+														"first-value": "int(random(0, 4))",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -3267,14 +3457,14 @@
 								{
 									"id": "add-child",
 									"objectClass": "characters",
-									"sid": 390276158932175,
+									"sid": 769122343345874,
 									"parameters": {
 										"child": "hp_bar_frame",
 										"transform-x": true,
 										"transform-y": true,
 										"transform-w": false,
 										"transform-h": false,
-										"transform-a": true,
+										"transform-a": false,
 										"transform-z-elevation": true,
 										"destroy-with-parent": true
 									}
@@ -3295,14 +3485,14 @@
 								{
 									"id": "add-child",
 									"objectClass": "characters",
-									"sid": 886111834754215,
+									"sid": 125315125641233,
 									"parameters": {
 										"child": "hp_bar",
 										"transform-x": true,
 										"transform-y": true,
 										"transform-w": false,
 										"transform-h": false,
-										"transform-a": true,
+										"transform-a": false,
 										"transform-z-elevation": true,
 										"destroy-with-parent": true
 									}
@@ -3466,7 +3656,8 @@
 										"ease": "default",
 										"destroy-on-complete": "yes",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -3506,7 +3697,8 @@
 								"ease": "easeoutbounce",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -3678,7 +3870,8 @@
 										"ease": "default",
 										"destroy-on-complete": "yes",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -3758,7 +3951,8 @@
 										"ease": "noease",
 										"destroy-on-complete": "yes",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -3803,6 +3997,1072 @@
 				}
 			],
 			"sid": 911975376922497
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Store",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 145696587648552,
+							"parameters": {
+								"variable": "is_showing_store"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 498828853757658,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 195628743143486,
+									"parameters": {
+										"object": "bonus"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 303912400623431,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								}
+							],
+							"sid": 866291440106161,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "bonus start"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 277895098560605,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "data",
+													"sid": 613683687253714,
+													"parameters": {
+														"key": "\"bomb\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "bonus",
+													"sid": 304573824601204,
+													"parameters": {
+														"animation": "\"bomb\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 272116987073987,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-nearestfurthest",
+															"objectClass": "creep",
+															"sid": 755420590147057,
+															"parameters": {
+																"which": "nearest",
+																"x": "pudge.X",
+																"y": "pudge.Y"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 807828942805345,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 756068490060019,
+																	"parameters": {
+																		"seconds": "random(1.45)"
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "pudge",
+																	"sid": 596010043784804,
+																	"parameters": {
+																		"object": "bomb",
+																		"layer": "\"bg\"",
+																		"image-point": "0",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "set-angle",
+																	"objectClass": "bomb",
+																	"sid": 670612713883114,
+																	"parameters": {
+																		"angle": "random(360)"
+																	}
+																},
+																{
+																	"id": "set-width",
+																	"objectClass": "bomb",
+																	"sid": 599743934561936,
+																	"parameters": {
+																		"width": "choose(Self.Width, -Self.Width)"
+																	}
+																}
+															],
+															"sid": 522422308741632
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "data",
+													"sid": 246555146670412,
+													"parameters": {
+														"key": "\"saw\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "bonus",
+													"sid": 358918052971373,
+													"parameters": {
+														"animation": "\"saw\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 713778587845565,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-nearestfurthest",
+															"objectClass": "creep",
+															"sid": 264627630626714,
+															"parameters": {
+																"which": "nearest",
+																"x": "pudge.X",
+																"y": "pudge.Y"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "pudge",
+															"sid": 952128203262157,
+															"parameters": {
+																"object": "saw",
+																"layer": "\"bg\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														}
+													],
+													"sid": 237777305449431
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "data",
+													"sid": 586834539546199,
+													"parameters": {
+														"key": "\"turret\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "bonus",
+													"sid": 382674626704750,
+													"parameters": {
+														"animation": "\"turret\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 594192264391029,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 881016613142064,
+															"parameters": {
+																"object-to-create": "turret_platform",
+																"layer": "\"bg\"",
+																"x": "pudge.X + random(-50,50)",
+																"y": "pudge.Y + random(-50,50)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "turret_platform",
+															"sid": 781477552948757,
+															"parameters": {
+																"object": "turret_head",
+																"layer": "\"bg\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "add-child",
+															"objectClass": "turret_platform",
+															"sid": 988288573867051,
+															"parameters": {
+																"child": "turret_head",
+																"transform-x": true,
+																"transform-y": true,
+																"transform-w": true,
+																"transform-h": true,
+																"transform-a": false,
+																"transform-z-elevation": true,
+																"destroy-with-parent": true
+															}
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "turret_head",
+															"sid": 878386703930915,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "15",
+																"type": "once",
+																"tag": "\"destroy\""
+															}
+														},
+														{
+															"id": "set-rate-of-fire",
+															"objectClass": "turret_head",
+															"sid": 502640178016235,
+															"behaviorType": "Turret",
+															"parameters": {
+																"rate-of-fire": "0.9"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "turret_head",
+															"sid": 526612123736972,
+															"parameters": {
+																"instance-variable": "dmg",
+																"value": "4"
+															}
+														}
+													],
+													"sid": 575300819104703
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "data",
+													"sid": 458798137098862,
+													"parameters": {
+														"key": "bonus.AnimationName"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data",
+													"sid": 254829872034982,
+													"parameters": {
+														"key": "bonus.AnimationName",
+														"value": "data.Get(bonus.AnimationName) + 1"
+													}
+												}
+											],
+											"sid": 674979531018463
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 367992309009977
+												}
+											],
+											"actions": [
+												{
+													"id": "add-key",
+													"objectClass": "data",
+													"sid": 984841185821938,
+													"parameters": {
+														"key": "bonus.AnimationName",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 414467879956795
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 481929464576762,
+													"parameters": {
+														"variable": "is_showing_store",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 907352603905198,
+													"parameters": {
+														"layer": "\"upgrade\"",
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 764718817484475,
+													"parameters": {
+														"layer": "\"upgrade\"",
+														"interactive": false
+													}
+												}
+											],
+											"sid": 942614363785674
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 410285735190617,
+							"parameters": {
+								"variable": "gold",
+								"comparison": 4,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 894715066709649,
+							"parameters": {
+								"variable": "gold",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "show_store",
+							"sid": 218760147104240
+						}
+					],
+					"sid": 824359942335559
+				},
+				{
+					"functionName": "shaffle_bonus_array",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "bonus_slots",
+							"sid": 762380096968445,
+							"parameters": {
+								"axes": "x"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 961763000732162,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 762386342323197
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 369647953775408,
+									"parameters": {
+										"first-value": "int(random(0, 100))",
+										"comparison": 3,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 367533236669161,
+									"parameters": {
+										"variable": "value",
+										"value": "bonus_slots.At(bonus_slots.CurX)"
+									}
+								},
+								{
+									"id": "delete",
+									"objectClass": "bonus_slots",
+									"sid": 469493230475356,
+									"parameters": {
+										"index": "bonus_slots.CurX",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 695828334187655,
+									"parameters": {
+										"where": "front",
+										"value": "value",
+										"axis": "x"
+									}
+								}
+							],
+							"sid": 836112217167120
+						}
+					]
+				},
+				{
+					"functionName": "store_choose_bonus",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "bonusToIgnore2",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 296573111999852
+						},
+						{
+							"name": "bonusToIgnore1",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 590668085686006
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 895588707323139,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-element",
+									"objectClass": "bonus_slots",
+									"sid": 418651116913043,
+									"parameters": {
+										"axes": "x"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 790874288431174,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-x",
+											"objectClass": "bonus_slots",
+											"sid": 214193722936279,
+											"parameters": {
+												"x": "bonus_slots.CurX",
+												"comparison": 1,
+												"value": "bonusToIgnore1"
+											}
+										},
+										{
+											"id": "compare-at-x",
+											"objectClass": "bonus_slots",
+											"sid": 373161716290273,
+											"parameters": {
+												"x": "bonus_slots.CurX",
+												"comparison": 1,
+												"value": "bonusToIgnore2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 327235676076818,
+											"parameters": {
+												"value": "bonus_slots.At(bonus_slots.CurX)"
+											}
+										}
+									],
+									"sid": 555622470672699
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "show_store",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 418799391750977,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "slot1",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 824273756665696
+						},
+						{
+							"eventType": "variable",
+							"name": "slot2",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 673343044846766
+						},
+						{
+							"eventType": "variable",
+							"name": "slot3",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 710155589886435
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "shaffle_bonus_array",
+									"sid": 678780059155096
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 799994818392136,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 434763042153094,
+									"parameters": {
+										"variable": "is_showing_store",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 164906823995336,
+									"parameters": {
+										"layer": "\"upgrade\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 923320422991391,
+									"parameters": {
+										"layer": "\"upgrade\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 339410643890207,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nth-instance",
+											"objectClass": "System",
+											"sid": 363656922572274,
+											"parameters": {
+												"object": "bonus",
+												"instance": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bonus",
+											"sid": 810834436804600,
+											"parameters": {
+												"animation": "Functions.store_choose_bonus(\"\", \"\")",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 980314041927641,
+											"parameters": {
+												"variable": "slot1",
+												"value": "bonus.AnimationName"
+											}
+										}
+									],
+									"sid": 795757591668794
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nth-instance",
+											"objectClass": "System",
+											"sid": 488234270901753,
+											"parameters": {
+												"object": "bonus",
+												"instance": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bonus",
+											"sid": 699187183323182,
+											"parameters": {
+												"animation": "Functions.store_choose_bonus(\"\", slot1)",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 549381510509485,
+											"parameters": {
+												"variable": "slot2",
+												"value": "bonus.AnimationName"
+											}
+										}
+									],
+									"sid": 204634065408977
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nth-instance",
+											"objectClass": "System",
+											"sid": 330815814190784,
+											"parameters": {
+												"object": "bonus",
+												"instance": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bonus",
+											"sid": 396205049161770,
+											"parameters": {
+												"animation": "Functions.store_choose_bonus(slot2, slot1)",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 824062913889343
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 733450591267622
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Turret",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "create_turret",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 902465040994003,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 330669138763723,
+									"parameters": {
+										"object-to-create": "turret_platform",
+										"layer": "\"bg\"",
+										"x": "pudge.X + random(-35, 35)",
+										"y": "pudge.Y + random(-35, 35)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "turret_platform",
+									"sid": 963304414412927,
+									"parameters": {
+										"object": "turret_head",
+										"layer": "\"bg\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "turret_platform",
+									"sid": 773989074182496,
+									"parameters": {
+										"child": "turret_head",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": false,
+										"transform-z-elevation": true,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "turret_head",
+									"sid": 752305799930429,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "25",
+										"type": "once",
+										"tag": "\"destroy\""
+									}
+								},
+								{
+									"id": "set-rate-of-fire",
+									"objectClass": "turret_head",
+									"sid": 481416338088269,
+									"behaviorType": "Turret",
+									"parameters": {
+										"rate-of-fire": "max(0.8 - data.Get(\"turret\") * 0.1, 0.1)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "turret_head",
+									"sid": 244087136347441,
+									"parameters": {
+										"instance-variable": "dmg",
+										"value": "data.Get(\"turret\") * 5"
+									}
+								}
+							],
+							"sid": 140958570241616
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-target",
+							"objectClass": "turret_head",
+							"sid": 542016723293714,
+							"behaviorType": "Turret",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-object-to-target",
+							"objectClass": "turret_head",
+							"sid": 648322147253681,
+							"behaviorType": "Turret",
+							"parameters": {
+								"target": "creep"
+							}
+						}
+					],
+					"sid": 727213617344956
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "turret_head",
+							"sid": 910387063834313,
+							"behaviorType": "Turret"
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "turret_head",
+							"sid": 146835616751052,
+							"parameters": {
+								"object": "bullet",
+								"layer": "\"chars\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "bullet",
+							"sid": 522130634727330,
+							"parameters": {
+								"instance-variable": "dmg",
+								"value": "turret_head.dmg"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "turret_head",
+							"sid": 221997129029783,
+							"parameters": {
+								"object": "Particles",
+								"layer": "\"chars\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "turret_head",
+							"sid": 729331347671023,
+							"parameters": {
+								"angle": "Self.Angle + random(-5,5)"
+							}
+						},
+						{
+							"id": "play-at-object-by-name",
+							"objectClass": "Audio",
+							"sid": 743808401022222,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"turret_shoot\" & str(choose(1,2))",
+								"loop": "not-looping",
+								"volume": "-35",
+								"object": "turret_head",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"creep\""
+							}
+						}
+					],
+					"sid": 175727081549628
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bullet",
+							"sid": 266530689131364,
+							"parameters": {
+								"object": "creep"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "bullet",
+							"sid": 884764247917043
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "creep",
+							"sid": 910462356833136,
+							"parameters": {
+								"instance-variable": "HP",
+								"value": "bullet.dmg"
+							}
+						},
+						{
+							"callFunction": "creep_spawn_blood",
+							"sid": 483132572089926
+						},
+						{
+							"callFunction": "creep_hp_update",
+							"sid": 189858602013267
+						}
+					],
+					"sid": 275789699360024
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "bullet",
+							"sid": 486075171175704,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 4,
+								"distance": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "bullet",
+							"sid": 611172526222384
+						}
+					],
+					"sid": 228219523689848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "turret_head",
+							"sid": 466077179235651,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"destroy\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 768035189474364,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-parent",
+									"objectClass": "turret_head",
+									"sid": 860232908832210,
+									"parameters": {
+										"parent": "turret_platform",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "turret_platform",
+									"sid": 968226745695930
+								}
+							],
+							"sid": 860035030234907
+						}
+					]
+				}
+			],
+			"sid": 717768846396147
 		}
 	],
 	"sid": 916318118090883

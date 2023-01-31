@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 170977968743183
+		},
+		{
+			"name": "dmg",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 924922764130403
 		}
 	],
 	"behaviorTypes": [
