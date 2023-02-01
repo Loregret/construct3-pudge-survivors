@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 720041335636285,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "slowdown",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 248446748200598
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",

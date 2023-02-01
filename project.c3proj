@@ -142,12 +142,7 @@
 	],
 	"uniqueId": "1636xtyqt0a",
 	"objectTypes": {
-		"items": [
-			"Text",
-			"bullet",
-			"Particles",
-			"Sprite"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -173,7 +168,13 @@
 					"saw",
 					"spear",
 					"turret_head",
-					"turret_platform"
+					"turret_platform",
+					"cleave",
+					"bullet",
+					"Particles",
+					"freeze",
+					"freeze_cold",
+					"particle_ice"
 				],
 				"subfolders": [],
 				"name": "objects"
@@ -185,7 +186,8 @@
 					"store_bg",
 					"store_button",
 					"creep_count",
-					"bonus"
+					"bonus",
+					"Text"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -432,6 +434,38 @@
 					"name": "turret_shoot2.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 290676908440744,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 806355453257581,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Crystal_Maiden_Frostbite.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 957086050464485,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Crystal_Maiden_Crystal_Nova.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 216910294552890,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Observer_Ward_Plant.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 735917232733905,
 					"file-info": {
 						"purpose": "none"
 					}

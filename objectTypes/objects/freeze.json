@@ -1,29 +1,40 @@
 {
-	"name": "Sprite",
+	"name": "freeze",
 	"plugin-id": "Sprite",
-	"sid": 419220864721672,
+	"sid": 756080549974817,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 849573541323169
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 855273802000296
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 172,
-						"height": 109,
+						"width": 44,
+						"height": 61,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.9344262295081968,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9586437,
+						"imageSpriteId": 7390508,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 822968792988254,
+				"sid": 614896459017645,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

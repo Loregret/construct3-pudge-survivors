@@ -1,0 +1,26 @@
+{
+	"name": "particle_ice",
+	"plugin-id": "Particles",
+	"sid": 644021209256401,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 444343888744679
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 7895420,
+		"useCollisionPoly": true
+	}
+}

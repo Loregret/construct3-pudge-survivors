@@ -23,12 +23,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 148912074284966
+		},
+		{
+			"name": "show_hp",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 109423908293158
 		}
 	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
 		"creep",
-		"pudge"
+		"pudge",
+		"freeze"
 	]
 }
