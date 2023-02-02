@@ -1,0 +1,71 @@
+{
+	"name": "spikes",
+	"plugin-id": "Sprite",
+	"sid": 217223382542184,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Shots",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 589232578079567
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 880479053185306
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 505229232383256
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 250210343451218
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 211219576770073
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 568281579659982
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 97,
+						"originX": 0.5052083333333334,
+						"originY": 0.5103092783505154,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4443306,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 326247678283122,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

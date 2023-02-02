@@ -32,6 +32,11 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 539766808756434
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "bounce",
+			"sid": 864108896113205
 		}
 	],
 	"effectTypes": [],

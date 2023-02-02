@@ -174,7 +174,9 @@
 					"Particles",
 					"freeze",
 					"freeze_cold",
-					"particle_ice"
+					"particle_ice",
+					"spikes",
+					"shield"
 				],
 				"subfolders": [],
 				"name": "objects"
@@ -229,13 +231,15 @@
 	"layouts": {
 		"items": [
 			"game",
-			"resource"
+			"resource",
+			"menu"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"#game"
+			"#game",
+			"#menu"
 		],
 		"subfolders": []
 	},
@@ -466,6 +470,30 @@
 					"name": "Observer_Ward_Plant.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 735917232733905,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Radiance_loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 574791773689010,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Butterfly.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 459242935741002,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bounce.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 347567077383642,
 					"file-info": {
 						"purpose": "none"
 					}

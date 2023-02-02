@@ -17,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 399184238673827
+		},
+		{
+			"name": "is_bounced",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 633530431689691
 		}
 	],
 	"behaviorTypes": [

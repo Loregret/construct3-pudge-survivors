@@ -135,6 +135,26 @@
 										"value": "\"freeze\"",
 										"axis": "x"
 									}
+								},
+								{
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 108232129737069,
+									"parameters": {
+										"where": "back",
+										"value": "\"spikes\"",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "push",
+									"objectClass": "bonus_slots",
+									"sid": 608530957336246,
+									"parameters": {
+										"where": "back",
+										"value": "\"shield\"",
+										"axis": "x"
+									}
 								}
 							],
 							"sid": 491067138744468
@@ -145,7 +165,13 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "is-in-preview",
+									"objectClass": "System",
+									"sid": 961012374981298
+								}
+							],
 							"actions": [
 								{
 									"id": "add-key",
@@ -195,6 +221,26 @@
 									"parameters": {
 										"key": "\"freeze\"",
 										"value": "1"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 459440596085145,
+									"disabled": true,
+									"parameters": {
+										"key": "\"spikes\"",
+										"value": "5"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "data",
+									"sid": 640800300492701,
+									"disabled": true,
+									"parameters": {
+										"key": "\"shield\"",
+										"value": "4"
 									}
 								}
 							],
@@ -828,14 +874,14 @@
 								{
 									"id": "has-key",
 									"objectClass": "data",
-									"sid": 227202886735100,
+									"sid": 416034875454322,
 									"parameters": {
 										"key": "\"freeze\""
 									}
 								}
 							],
 							"actions": [],
-							"sid": 847387962509288,
+							"sid": 433866625992967,
 							"children": [
 								{
 									"eventType": "block",
@@ -843,7 +889,7 @@
 										{
 											"id": "is-timer-running",
 											"objectClass": "pudge",
-											"sid": 299313125314404,
+											"sid": 940036459237238,
 											"behaviorType": "Timer",
 											"parameters": {
 												"tag": "\"freeze\""
@@ -855,7 +901,7 @@
 										{
 											"id": "start-timer",
 											"objectClass": "pudge",
-											"sid": 159519910217038,
+											"sid": 748370193833250,
 											"behaviorType": "Timer",
 											"parameters": {
 												"duration": "max(20 - data.Get(\"freeze\") * 3, 3)",
@@ -864,7 +910,7 @@
 											}
 										}
 									],
-									"sid": 551396518526478
+									"sid": 499380912063320
 								},
 								{
 									"eventType": "block",
@@ -872,7 +918,7 @@
 										{
 											"id": "on-timer",
 											"objectClass": "pudge",
-											"sid": 817258080927544,
+											"sid": 393602650744513,
 											"behaviorType": "Timer",
 											"parameters": {
 												"tag": "\"freeze\""
@@ -880,7 +926,7 @@
 										}
 									],
 									"actions": [],
-									"sid": 195269652993186,
+									"sid": 478346106330856,
 									"children": [
 										{
 											"eventType": "block",
@@ -888,7 +934,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 246628859878430,
+													"sid": 909780241466033,
 													"parameters": {
 														"first-value": "freeze.Count",
 														"comparison": 3,
@@ -900,7 +946,7 @@
 												{
 													"id": "spawn-another-object",
 													"objectClass": "pudge",
-													"sid": 643258950220149,
+													"sid": 193220729680760,
 													"parameters": {
 														"object": "freeze",
 														"layer": "\"chars\"",
@@ -911,7 +957,7 @@
 												{
 													"id": "set-scale",
 													"objectClass": "freeze",
-													"sid": 228662971016881,
+													"sid": 480288851142736,
 													"parameters": {
 														"scale": "0"
 													}
@@ -919,7 +965,7 @@
 												{
 													"id": "tween-two-properties",
 													"objectClass": "freeze",
-													"sid": 199372963721183,
+													"sid": 109050172127573,
 													"behaviorType": "Tween",
 													"parameters": {
 														"tags": "\"showup\"",
@@ -935,7 +981,7 @@
 													}
 												}
 											],
-											"sid": 913453198570068,
+											"sid": 636635605201075,
 											"children": [
 												{
 													"eventType": "block",
@@ -944,10 +990,10 @@
 														{
 															"id": "start-timer",
 															"objectClass": "freeze",
-															"sid": 485324243435706,
+															"sid": 827521136232885,
 															"behaviorType": "Timer",
 															"parameters": {
-																"duration": "max(10 - data.Get(\"freeze\") * 1, 2)",
+																"duration": "max(9 - data.Get(\"freeze\") * 1, 2)",
 																"type": "regular",
 																"tag": "\"cold\""
 															}
@@ -955,16 +1001,234 @@
 														{
 															"id": "start-timer",
 															"objectClass": "freeze",
-															"sid": 367016725606717,
+															"sid": 214269144995649,
 															"behaviorType": "Timer",
 															"parameters": {
-																"duration": "min(28 - data.Get(\"freeze\") * 1, 60)",
+																"duration": "min(31 - data.Get(\"freeze\") * 1, 60)",
 																"type": "once",
 																"tag": "\"destroy\""
 															}
 														}
 													],
-													"sid": 590425908254304
+													"sid": 775527746599573
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data",
+									"sid": 299929676278263,
+									"parameters": {
+										"key": "\"spikes\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 954324281252361,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "pudge",
+											"sid": 904694012880327,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"spikes\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "pudge",
+											"sid": 502103970398675,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "max(8 - data.Get(\"spikes\"), 3)",
+												"type": "once",
+												"tag": "\"spikes\""
+											}
+										}
+									],
+									"sid": 825678995038741
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "pudge",
+											"sid": 712156089834655,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"spikes\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 223545692299831,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 439490318039373,
+													"parameters": {
+														"first-value": "spikes.Count",
+														"comparison": 3,
+														"second-value": "50"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "pudge",
+													"sid": 441809768464073,
+													"parameters": {
+														"object": "spikes",
+														"layer": "\"chars\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "spikes",
+													"sid": 246200129854431,
+													"parameters": {
+														"scale": "0"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "spikes",
+													"sid": 361215807355037,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"showup\"",
+														"property": "scale",
+														"end-x": "0.7",
+														"end-y": "0.7",
+														"time": "0.25",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "spikes",
+													"sid": 314334628973313,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "4 + data.Get(\"spikes\") * 1",
+														"type": "once",
+														"tag": "\"destroy\""
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "spikes",
+													"sid": 423876385721981,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "0.5",
+														"type": "once",
+														"tag": "\"slowdown_frame\""
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 899708704823749,
+													"parameters": {
+														"audio-file": "Butterfly",
+														"loop": "not-looping",
+														"volume": "-10",
+														"object": "spikes",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"spike_start\""
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 296229943003543,
+													"parameters": {
+														"audio-file": "Radiance_loop",
+														"loop": "looping",
+														"volume": "-17",
+														"object": "spikes",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"spike_\" & spikes.UID"
+													}
+												}
+											],
+											"sid": 226777465481468,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-nearestfurthest",
+															"objectClass": "creep",
+															"sid": 520824877452043,
+															"parameters": {
+																"which": "nearest",
+																"x": "pudge.X",
+																"y": "pudge.Y"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "tween-two-properties",
+															"objectClass": "spikes",
+															"sid": 919189196720126,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"move\"",
+																"property": "position",
+																"end-x": "creep.X",
+																"end-y": "creep.Y",
+																"time": "0.75",
+																"ease": "easeoutsine",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
+														},
+														{
+															"id": "set-angle-of-motion",
+															"objectClass": "spikes",
+															"sid": 569488136168219,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"angle": "angle(Self.X, Self.Y, creep.X, creep.Y)"
+															}
+														}
+													],
+													"sid": 972204901240147
 												}
 											]
 										}
@@ -2220,9 +2484,9 @@
 										{
 											"id": "set-width",
 											"objectClass": "hp_bar",
-											"sid": 910500008891915,
+											"sid": 320659282097156,
 											"parameters": {
-												"width": "hp_bar_frame.Width * (pudge.HP / pudge.MAX_HP)"
+												"width": "max(hp_bar_frame.Width * (pudge.HP / pudge.MAX_HP),0)"
 											}
 										}
 									],
@@ -3042,10 +3306,10 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "ball",
-									"sid": 169524079428510,
+									"sid": 430502360390863,
 									"behaviorType": "Tween",
 									"parameters": {
-										"tags": "\"\"",
+										"tags": "\"shrink\"",
 										"property": "scale",
 										"end-x": "0",
 										"end-y": "0",
@@ -3094,6 +3358,102 @@
 							],
 							"sid": 925238726875506,
 							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ball",
+									"sid": 646320108488027,
+									"parameters": {
+										"object": "creep"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "ball",
+									"sid": 631958929223893,
+									"parameters": {
+										"instance-variable": "is_bounced"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "ball",
+									"sid": 500359739455474,
+									"parameters": {
+										"instance-variable": "is_active",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 503616980005153,
+									"parameters": {
+										"tag": "\"projhit\""
+									}
+								},
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 250532705174529,
+									"parameters": {
+										"audio-file": "Bane_projectile_impact",
+										"loop": "not-looping",
+										"volume": "-20",
+										"object": "creep",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "creep",
+									"sid": 600938959902665,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "ball.dmg"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ball",
+									"sid": 412864015073004,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"shrink\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.125",
+										"ease": "noease",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "ball",
+									"sid": 684100317736516,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"callFunction": "creep_hp_update",
+									"sid": 707503840773355
+								}
+							],
+							"sid": 986098470665235
 						}
 					]
 				}
@@ -3113,7 +3473,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 980287472132665,
+							"sid": 120414889190257,
 							"parameters": {
 								"variable": "gold",
 								"comparison": 4,
@@ -3456,7 +3816,7 @@
 												{
 													"id": "has-key",
 													"objectClass": "data",
-													"sid": 653291588876294,
+													"sid": 605859573308777,
 													"parameters": {
 														"key": "\"freeze\""
 													},
@@ -3465,14 +3825,14 @@
 												{
 													"id": "is-animation-playing",
 													"objectClass": "bonus",
-													"sid": 725263108362152,
+													"sid": 947027686933046,
 													"parameters": {
 														"animation": "\"freeze\""
 													}
 												}
 											],
 											"actions": [],
-											"sid": 736435285895072,
+											"sid": 310792162133379,
 											"children": [
 												{
 													"eventType": "block",
@@ -3481,7 +3841,7 @@
 														{
 															"id": "create-object",
 															"objectClass": "System",
-															"sid": 337146890419271,
+															"sid": 536841518276434,
 															"parameters": {
 																"object-to-create": "freeze",
 																"layer": "\"chars\"",
@@ -3494,7 +3854,7 @@
 														{
 															"id": "set-scale",
 															"objectClass": "freeze",
-															"sid": 982408503789771,
+															"sid": 851061540624964,
 															"parameters": {
 																"scale": "0"
 															}
@@ -3502,7 +3862,7 @@
 														{
 															"id": "tween-two-properties",
 															"objectClass": "freeze",
-															"sid": 331122571482426,
+															"sid": 470066526112766,
 															"behaviorType": "Tween",
 															"parameters": {
 																"tags": "\"showup\"",
@@ -3520,10 +3880,10 @@
 														{
 															"id": "start-timer",
 															"objectClass": "freeze",
-															"sid": 299137720970295,
+															"sid": 815166428390973,
 															"behaviorType": "Timer",
 															"parameters": {
-																"duration": "4",
+																"duration": "8",
 																"type": "regular",
 																"tag": "\"cold\""
 															}
@@ -3531,12 +3891,67 @@
 														{
 															"id": "start-timer",
 															"objectClass": "freeze",
-															"sid": 400175444901436,
+															"sid": 862261995721999,
 															"behaviorType": "Timer",
 															"parameters": {
-																"duration": "13",
+																"duration": "30",
 																"type": "once",
 																"tag": "\"destroy\""
+															}
+														}
+													],
+													"sid": 433471010114095
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "data",
+													"sid": 615060528435033,
+													"parameters": {
+														"key": "\"shield\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "bonus",
+													"sid": 518518198417173,
+													"parameters": {
+														"animation": "\"shield\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 736435285895072,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 450462084314275,
+															"parameters": {
+																"object-to-create": "shield",
+																"layer": "\"hook\"",
+																"x": "pudge.X",
+																"y": "pudge.Y",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "shield",
+															"sid": 603817768143875,
+															"behaviorType": "Rotate",
+															"parameters": {
+																"speed": "160"
 															}
 														}
 													],
@@ -3624,6 +4039,39 @@
 												}
 											],
 											"sid": 743320469009893
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "data",
+											"sid": 245333548908910,
+											"parameters": {
+												"key": "\"shield\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 186595478404927,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-speed",
+													"objectClass": "shield",
+													"sid": 700336839185428,
+													"behaviorType": "Rotate",
+													"parameters": {
+														"speed": "150 + data.Get(\"shield\") * 20"
+													}
+												}
+											],
+											"sid": 211988720491563
 										}
 									]
 								}
@@ -4108,6 +4556,187 @@
 							"sid": 216390030041899,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "timers"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 595300965453536,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "creep",
+													"sid": 580854893321613,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"slowdown\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 155899254826011,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-speed",
+															"objectClass": "creep",
+															"sid": 185517565081329,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"speed": "Self.Bullet.Speed + Self.slowdown"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "creep",
+															"sid": 717752427244160,
+															"parameters": {
+																"instance-variable": "slowdown",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "creep",
+															"sid": 407007539486333,
+															"parameters": {
+																"color": "rgba255(255,255,255,255)"
+															}
+														}
+													],
+													"sid": 911355625810427
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "creep",
+													"sid": 250315905371549,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"debuff_bleed_loop_heavy\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 329682656732100,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "creep",
+															"sid": 498059908366409,
+															"parameters": {
+																"instance-variable": "HP",
+																"value": "creep.MAX_HP * 0.02"
+															}
+														},
+														{
+															"callFunction": "creep_hp_update",
+															"sid": 894252684437791
+														},
+														{
+															"callFunction": "creep_spawn_blood_small",
+															"sid": 252917095293752
+														}
+													],
+													"sid": 569440152917308
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "creep",
+													"sid": 660267072568386,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"debuff_bleed_loop\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 549671921284397,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "creep",
+															"sid": 586878341570782,
+															"parameters": {
+																"instance-variable": "HP",
+																"value": "creep.MAX_HP * 0.02"
+															}
+														},
+														{
+															"callFunction": "creep_hp_update",
+															"sid": 939183873594019
+														},
+														{
+															"callFunction": "creep_spawn_blood_small",
+															"sid": 448971253195192
+														}
+													],
+													"sid": 194556792205042
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "creep",
+													"sid": 964031838510332,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"debuff_bleed\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 716721030149314,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "stop-timer",
+															"objectClass": "creep",
+															"sid": 157716863884347,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"debuff_bleed_loop\""
+															}
+														}
+													],
+													"sid": 737472600711118
+												}
+											]
+										}
+									]
+								},
+								{
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
@@ -4132,6 +4761,16 @@
 											"sid": 237526424050038,
 											"parameters": {
 												"object": "enemy"
+											}
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "creep",
+											"sid": 744230690532490,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 5,
+												"speed": "5"
 											}
 										}
 									],
@@ -4503,144 +5142,51 @@
 									"sid": 516066086107009
 								}
 							]
-						}
-					],
-					"sid": 226293533346495
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Creeps - slowdown",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-timer",
-									"objectClass": "creep",
-									"sid": 648626744358061,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"slowdown\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-speed",
-									"objectClass": "creep",
-									"sid": 864521275913778,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"speed": "Self.Bullet.Speed + Self.slowdown"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "creep",
-									"sid": 370788145776668,
-									"parameters": {
-										"instance-variable": "slowdown",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-default-color",
-									"objectClass": "creep",
-									"sid": 391454186793025,
-									"parameters": {
-										"color": "rgba255(255,255,255,255)"
-									}
-								}
-							],
-							"sid": 952802496772585
-						}
-					],
-					"sid": 314636179998515
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Creeps - bleed",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-timer",
-									"objectClass": "creep",
-									"sid": 616398782576997,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"debuff_bleed_loop\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 847419933878315,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "subtract-from-instvar",
-											"objectClass": "creep",
-											"sid": 379677800167423,
-											"parameters": {
-												"instance-variable": "HP",
-												"value": "creep.MAX_HP * 0.05"
-											}
-										},
-										{
-											"callFunction": "creep_hp_update",
-											"sid": 174583024136263
-										}
-									],
-									"sid": 187556251226912
-								}
-							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-timer",
+									"id": "is-enabled",
 									"objectClass": "creep",
-									"sid": 740427754320980,
-									"behaviorType": "Timer",
+									"sid": 583660534509125,
+									"behaviorType": "bounce"
+								},
+								{
+									"id": "compare-distance-travelled",
+									"objectClass": "creep",
+									"sid": 832832637681535,
+									"behaviorType": "bounce",
 									"parameters": {
-										"tag": "\"debuff_bleed\""
+										"comparison": 4,
+										"distance": "100"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 755843913488832,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "stop-timer",
-											"objectClass": "creep",
-											"sid": 533891960773735,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"debuff_bleed_loop\""
-											}
-										}
-									],
-									"sid": 497423736140539
+									"id": "set-enabled",
+									"objectClass": "creep",
+									"sid": 497566090542663,
+									"behaviorType": "bounce",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-distance-travelled",
+									"objectClass": "creep",
+									"sid": 469403531597154,
+									"behaviorType": "bounce",
+									"parameters": {
+										"distance": "0"
+									}
 								}
-							]
+							],
+							"sid": 553885989183476
 						}
 					],
-					"sid": 794906021005139
+					"sid": 226293533346495
 				},
 				{
 					"eventType": "group",
@@ -4649,6 +5195,58 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"functionName": "creep_bleed_heavy",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "timer",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "",
+									"sid": 490220966787642
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 731649711233812,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "creep",
+											"sid": 947880326086764,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "timer",
+												"type": "once",
+												"tag": "\"debuff_bleed\""
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "creep",
+											"sid": 813008774807041,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.3",
+												"type": "regular",
+												"tag": "\"debuff_bleed_loop_heavy\""
+											}
+										}
+									],
+									"sid": 852595701485479
+								}
+							]
+						},
 						{
 							"functionName": "creep_bleed",
 							"functionDescription": "",
@@ -4731,12 +5329,65 @@
 							"children": [
 								{
 									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "creep",
+											"sid": 245314942300951,
+											"parameters": {
+												"instance-variable": "slowdown",
+												"comparison": 1,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-speed",
+											"objectClass": "creep",
+											"sid": 294988504727694,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Self.Bullet.Speed + Self.slowdown"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "creep",
+											"sid": 988709915759165,
+											"parameters": {
+												"instance-variable": "slowdown",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 262130015747475
+								},
+								{
+									"eventType": "block",
 									"conditions": [],
+									"actions": [],
+									"sid": 905764710408236
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 732411271384001,
+											"parameters": {
+												"first-value": "slowdown",
+												"comparison": 3,
+												"second-value": "creep.Bullet.Speed"
+											}
+										}
+									],
 									"actions": [
 										{
 											"id": "set-instvar-value",
 											"objectClass": "creep",
-											"sid": 173842615428627,
+											"sid": 929165123693909,
 											"parameters": {
 												"instance-variable": "slowdown",
 												"value": "slowdown"
@@ -4745,16 +5396,54 @@
 										{
 											"id": "set-speed",
 											"objectClass": "creep",
-											"sid": 361462936677302,
+											"sid": 799069553456953,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"speed": "creep.Bullet.Speed - slowdown"
 											}
+										}
+									],
+									"sid": 330679921352222
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 213067846205435
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "creep",
+											"sid": 466335835254068,
+											"parameters": {
+												"instance-variable": "slowdown",
+												"value": "creep.Bullet.Speed"
+											}
 										},
+										{
+											"id": "set-speed",
+											"objectClass": "creep",
+											"sid": 376536449071692,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "0"
+											}
+										}
+									],
+									"sid": 280695816883196
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
 										{
 											"id": "start-timer",
 											"objectClass": "creep",
-											"sid": 851757458152408,
+											"sid": 516870701757634,
 											"behaviorType": "Timer",
 											"parameters": {
 												"duration": "timer",
@@ -4765,13 +5454,13 @@
 										{
 											"id": "set-default-color",
 											"objectClass": "creep",
-											"sid": 102018341522585,
+											"sid": 715955570514620,
 											"parameters": {
 												"color": "rgbEx(60, 80, 100)"
 											}
 										}
 									],
-									"sid": 805830061210762
+									"sid": 791731492638830
 								}
 							]
 						},
@@ -4868,6 +5557,74 @@
 							]
 						},
 						{
+							"functionName": "creep_spawn_blood_small",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 115772880008741,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 984764649126205,
+											"parameters": {
+												"first-value": "particle.Count",
+												"comparison": 3,
+												"second-value": "50"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "creep",
+											"sid": 355974209938421,
+											"parameters": {
+												"object": "particle",
+												"layer": "\"hook\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "particle",
+											"sid": 412263161076837,
+											"parameters": {
+												"color": "rgbEx(100, 12, 12)"
+											}
+										},
+										{
+											"id": "set-rate",
+											"objectClass": "particle",
+											"sid": 878029373074159,
+											"parameters": {
+												"rate": "2"
+											}
+										},
+										{
+											"id": "set-grow-rate",
+											"objectClass": "particle",
+											"sid": 266147841504338,
+											"parameters": {
+												"grow-rate": "-25"
+											}
+										}
+									],
+									"sid": 231422303724728
+								}
+							]
+						},
+						{
 							"functionName": "creep_spawn_blood",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -4886,11 +5643,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 134092112722888,
+											"sid": 299238083781992,
 											"parameters": {
 												"first-value": "particle.Count",
 												"comparison": 3,
-												"second-value": "20"
+												"second-value": "50"
 											}
 										}
 									],
@@ -5565,46 +6322,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-timer",
-							"objectClass": "turret_head",
-							"sid": 561411138452976,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"destroy\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 439273657912116,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-parent",
-									"objectClass": "turret_head",
-									"sid": 871385355324183,
-									"parameters": {
-										"parent": "turret_platform",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "turret_platform",
-									"sid": 596123505782926
-								}
-							],
-							"sid": 577727984770045
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "has-target",
 							"objectClass": "turret_head",
 							"sid": 542016723293714,
@@ -5754,6 +6471,63 @@
 						}
 					],
 					"sid": 228219523689848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 304008486659069,
+							"parameters": {
+								"object": "turret_head"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 862715415158640,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "turret_head",
+									"sid": 837019088097643,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 915755744441930,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "turret_head",
+											"sid": 737750922824878,
+											"parameters": {
+												"parent": "turret_platform",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "turret_platform",
+											"sid": 608661812406850
+										}
+									],
+									"sid": 931584843826777
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 717768846396147
@@ -5809,9 +6583,9 @@
 						},
 						{
 							"callFunction": "creep_slowdown",
-							"sid": 801082447093478,
+							"sid": 368978376899879,
 							"parameters": [
-								"100",
+								"45 + 10 * data.Get(\"freeze\")",
 								"timer"
 							]
 						},
@@ -5864,153 +6638,634 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-timer",
-							"objectClass": "freeze",
-							"sid": 157369470350626,
-							"behaviorType": "Timer",
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 846666316959236,
 							"parameters": {
-								"tag": "\"cold\""
+								"object": "freeze"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 146455650800637,
+					"sid": 596181267529372,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-on-screen",
-									"objectClass": "creep",
-									"sid": 981196384779666
+									"id": "on-timer",
+									"objectClass": "freeze",
+									"sid": 160118130070603,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"cold\""
+									}
 								}
 							],
 							"actions": [],
-							"sid": 715980203110864,
+							"sid": 576188056473372,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [
+									"conditions": [
 										{
-											"id": "play-at-object",
-											"objectClass": "Audio",
-											"sid": 806832948056407,
-											"parameters": {
-												"audio-file": "Crystal_Maiden_Crystal_Nova",
-												"loop": "not-looping",
-												"volume": "-15",
-												"object": "freeze",
-												"inner-angle": "360",
-												"outer-angle": "360",
-												"outer-gain": "0",
-												"tag-optional": "\"freeze\""
-											}
-										},
-										{
-											"id": "play-at-object",
-											"objectClass": "Audio",
-											"sid": 388971021502730,
-											"parameters": {
-												"audio-file": "Crystal_Maiden_Frostbite",
-												"loop": "not-looping",
-												"volume": "-5",
-												"object": "freeze",
-												"inner-angle": "360",
-												"outer-angle": "360",
-												"outer-gain": "0",
-												"tag-optional": "\"freeze\""
-											}
+											"id": "is-on-screen",
+											"objectClass": "creep",
+											"sid": 113798465471862
 										}
 									],
-									"sid": 812625955627308
+									"actions": [],
+									"sid": 622913274421947,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 857782499352324,
+													"parameters": {
+														"audio-file": "Crystal_Maiden_Crystal_Nova",
+														"loop": "not-looping",
+														"volume": "-12",
+														"object": "freeze",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"freeze\""
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 736938802789726,
+													"parameters": {
+														"audio-file": "Crystal_Maiden_Frostbite",
+														"loop": "not-looping",
+														"volume": "-14",
+														"object": "freeze",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"freeze\""
+													}
+												}
+											],
+											"sid": 780151421977160
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "freeze",
+													"sid": 955138120365102,
+													"parameters": {
+														"object": "freeze_cold",
+														"layer": "\"chars\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "freeze_cold",
+													"sid": 348713170299039,
+													"parameters": {
+														"scale": "0"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "freeze_cold",
+													"sid": 378771347311832,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"cold\"",
+														"property": "scale",
+														"end-x": "5",
+														"end-y": "5",
+														"time": "0.85",
+														"ease": "noease",
+														"destroy-on-complete": "yes",
+														"loop": "no",
+														"ping-pong": "yes",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 567614692842498
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "freeze",
+									"sid": 850626777697511,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "freeze",
+									"sid": 101131754793826,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"scale\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.25",
+										"ease": "easeoutbounce",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 750005812415437
+						}
+					]
+				}
+			],
+			"sid": 940176584649427
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spikes",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 888635511746480,
+							"parameters": {
+								"object": "spikes"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 753075719630043,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "spikes",
+									"sid": 249663336141389,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "spikes",
+									"sid": 899185251213066,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
 								},
 								{
+									"id": "tween-two-properties",
+									"objectClass": "spikes",
+									"sid": 612859151092555,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.65",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 392958080925676,
+									"parameters": {
+										"tag": "\"spike_\" & spikes.UID"
+									}
+								}
+							],
+							"sid": 872220067292330
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "spikes",
+									"sid": 119655618876525,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"rotate\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 277033585655319,
+							"children": [
+								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [
+									"conditions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "freeze",
-											"sid": 989517435198859,
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 574794680656852,
 											"parameters": {
-												"object": "freeze_cold",
-												"layer": "\"chars\"",
-												"image-point": "0",
-												"create-hierarchy": false
+												"object": "creep",
+												"expression": "distance(creep.X, creep.Y, spikes.X, spikes.Y)",
+												"comparison": 2,
+												"value": "600"
 											}
 										},
 										{
-											"id": "set-scale",
-											"objectClass": "freeze_cold",
-											"sid": 854549141208346,
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 567981185660396,
 											"parameters": {
-												"scale": "0"
-											}
-										},
-										{
-											"id": "tween-two-properties",
-											"objectClass": "freeze_cold",
-											"sid": 247842292485507,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"cold\"",
-												"property": "scale",
-												"end-x": "5",
-												"end-y": "5",
-												"time": "0.85",
-												"ease": "noease",
-												"destroy-on-complete": "yes",
-												"loop": "no",
-												"ping-pong": "yes",
-												"repeat-count": "1"
+												"object": "creep"
 											}
 										}
 									],
-									"sid": 537547307636650
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "spikes",
+											"sid": 343655668443316,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, creep.X, creep.Y)"
+											}
+										}
+									],
+									"sid": 370571727733402
 								}
 							]
 						}
-					],
-					"isOrBlock": true
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-timer",
-							"objectClass": "freeze",
-							"sid": 514975797360838,
-							"behaviorType": "Timer",
+							"id": "on-collision-with-another-object",
+							"objectClass": "creep",
+							"sid": 926389583148089,
 							"parameters": {
-								"tag": "\"destroy\""
+								"object": "spikes"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "tween-two-properties",
-							"objectClass": "freeze",
-							"sid": 900422990833526,
-							"behaviorType": "Tween",
+							"callFunction": "creep_bleed_heavy",
+							"sid": 580701260896920,
+							"parameters": [
+								"data.Get(\"spikes\") * 2 + 4"
+							]
+						},
+						{
+							"callFunction": "creep_spawn_blood",
+							"sid": 262245704208749
+						}
+					],
+					"sid": 720362115396081,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-timer-running",
+									"objectClass": "spikes",
+									"sid": 645294690372772,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"slowdown_frame\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "creep",
+									"sid": 950095278524193,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "data.Get(\"spikes\") * 2"
+									}
+								},
+								{
+									"callFunction": "creep_hp_update",
+									"sid": 716145100220821
+								}
+							],
+							"sid": 715877892280942
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "creep",
+							"sid": 335364057192576,
 							"parameters": {
-								"tags": "\"scale\"",
-								"property": "scale",
-								"end-x": "0",
-								"end-y": "0",
-								"time": "0.25",
-								"ease": "easeoutbounce",
-								"destroy-on-complete": "yes",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"object": "spikes"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "creep",
+							"sid": 731562152470725,
+							"parameters": {
+								"instance-variable": "slowdown",
+								"comparison": 0,
+								"value": "0"
 							}
 						}
 					],
-					"sid": 657606138397576
+					"actions": [
+						{
+							"callFunction": "creep_slowdown",
+							"sid": 455673657668951,
+							"parameters": [
+								"50 + data.Get(\"spikes\") * 10",
+								"0.25"
+							]
+						}
+					],
+					"sid": 536961759817276
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "spikes",
+							"sid": 667999827698069
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "spikes",
+							"sid": 400559690665902,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.75",
+								"type": "regular",
+								"tag": "\"rotate\""
+							}
+						}
+					],
+					"sid": 205520706521780
 				}
 			],
-			"sid": 940176584649427
+			"sid": 887560893338152
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Shield",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "shield",
+							"sid": 659881730666916
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "shield",
+							"sid": 258500937037846,
+							"parameters": {
+								"object": "pudge",
+								"image-point-optional": "\"center\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "pudge",
+							"sid": 255933318966165,
+							"parameters": {
+								"child": "shield",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 205172888458001
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "shield",
+							"sid": 662099293565321,
+							"parameters": {
+								"object": "ball"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 730875199567494,
+							"parameters": {
+								"audio-file": "Chen_projectile_launch",
+								"loop": "not-looping",
+								"volume": "-20",
+								"object": "ball",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-distance-travelled",
+							"objectClass": "ball",
+							"sid": 356774413287076,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"distance": "0"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "ball",
+							"sid": 914213568554321,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(pudge.X, pudge.Y, ball.X, ball.Y)"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "ball",
+							"sid": 203546356293634,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Self.Bullet.Speed + 150"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "ball",
+							"sid": 991240574795642,
+							"parameters": {
+								"instance-variable": "is_bounced",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 873034290474006
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "shield",
+							"sid": 399536233558144,
+							"parameters": {
+								"object": "creep"
+							}
+						},
+						{
+							"id": "is-enabled",
+							"objectClass": "creep",
+							"sid": 448361117085545,
+							"behaviorType": "bounce",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "creep",
+							"sid": 335515187589512,
+							"behaviorType": "bounce",
+							"parameters": {
+								"angle": "angle(pudge.X, pudge.Y, Self.X, Self.Y)"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "creep",
+							"sid": 299605887342389,
+							"behaviorType": "bounce",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 637587239088535,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "creep",
+									"sid": 498004244557821,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "data.Get(\"shield\") * 4"
+									}
+								},
+								{
+									"callFunction": "creep_hp_update",
+									"sid": 311087329834865
+								}
+							],
+							"sid": 714613546919934
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "creep_slowdown",
+									"sid": 827991791653925,
+									"parameters": [
+										"45 + data.Get(\"shield\") * 5",
+										"1.75"
+									]
+								}
+							],
+							"sid": 348767137629706
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 201905013455256,
+									"parameters": {
+										"audio-file": "bounce",
+										"loop": "not-looping",
+										"volume": "-17",
+										"object": "shield",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"bounce\""
+									}
+								}
+							],
+							"sid": 921868738485750
+						}
+					]
+				}
+			],
+			"sid": 760792454175375
 		}
 	],
 	"sid": 916318118090883
