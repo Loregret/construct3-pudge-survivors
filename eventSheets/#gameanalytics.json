@@ -1,0 +1,25 @@
+{
+	"name": "#gameanalytics",
+	"events": [
+		{
+			"functionName": "ga_init",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "initialize",
+					"objectClass": "GameAnalytics",
+					"sid": 654395453965020
+				}
+			],
+			"sid": 883224431666161
+		}
+	],
+	"sid": 148524637267843
+}

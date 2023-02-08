@@ -1,0 +1,88 @@
+{
+	"name": "#loading",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "#gameanalytics"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#plugins"
+		},
+		{
+			"eventType": "variable",
+			"name": "loading",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 768354063991407
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 767063533543468
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 275951429222735,
+					"parameters": {
+						"variable": "loading",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 590124434523964
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 315662525087655
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 472313544462155,
+					"parameters": {
+						"variable": "loading",
+						"value": "false"
+					}
+				},
+				{
+					"callFunction": "ga_init",
+					"sid": 997309701747525
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 699701617305074,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 829401099567109,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 664809020644444
+		}
+	],
+	"sid": 573006099418508
+}

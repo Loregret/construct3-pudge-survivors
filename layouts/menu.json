@@ -2,10 +2,392 @@
 	"name": "menu",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "bg",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "mainbg",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 46,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 0.25
+							}
+						}
+					},
+					"world": {
+						"x": 642,
+						"y": 372,
+						"width": 876.0164192760412,
+						"height": 571.6619834312748,
+						"originX": 0.4983734547820429,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.1901999359130856
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 247930822026293,
+			"effectTypes": [
+				{
+					"effectId": "vignette",
+					"name": "Vignette",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"start-radius": 0.04,
+							"end-radius": 0.65
+						}
+					}
+				}
+			],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "menu",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "button",
+					"properties": {
+						"left-margin": 9,
+						"right-margin": 9,
+						"top-margin": 9,
+						"bottom-margin": 9,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 47,
+					"instanceVariables": {
+						"state": "normal"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 640,
+						"y": 487,
+						"width": 486.25165708988925,
+						"height": 114.16239151433854,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5607843137254902,
+							0.5607843137254902,
+							0.5607843137254902,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "button",
+					"properties": {
+						"left-margin": 9,
+						"right-margin": 9,
+						"top-margin": 9,
+						"bottom-margin": 9,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 44,
+					"instanceVariables": {
+						"state": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 642,
+						"y": 488,
+						"width": 457.25165708988925,
+						"height": 86.16239151433857,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menutext",
+					"properties": {
+						"text": "NORMAL MODE",
+						"enable-bbcode": false,
+						"font": "UbuntuMono-Bold",
+						"size": 30,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 45,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 639,
+						"y": 492,
+						"width": 452.2850058708499,
+						"height": 50.26858783341129,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "button",
+					"properties": {
+						"left-margin": 9,
+						"right-margin": 9,
+						"top-margin": 9,
+						"bottom-margin": 9,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 16,
+					"instanceVariables": {
+						"state": "hard"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 640,
+						"y": 627,
+						"width": 486.25165708988925,
+						"height": 114.16239151433854,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5607843137254902,
+							0.5607843137254902,
+							0.5607843137254902,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "button",
+					"properties": {
+						"left-margin": 9,
+						"right-margin": 9,
+						"top-margin": 9,
+						"bottom-margin": 9,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"state": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 642,
+						"y": 628,
+						"width": 457.25165708988925,
+						"height": 86.16239151433857,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menutext",
+					"properties": {
+						"text": "HARD MODE",
+						"enable-bbcode": false,
+						"font": "UbuntuMono-Bold",
+						"size": 30,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 53,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 639,
+						"y": 632,
+						"width": 452.2850058708499,
+						"height": 50.26858783341129,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menutext2",
+					"properties": {
+						"text": "PUDGE SURVIVORS",
+						"enable-bbcode": false,
+						"font": "UbuntuMono-Bold",
+						"size": 50,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							0.0392156862745098,
+							0.0392156862745098,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 54,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 638,
+						"y": 88,
+						"width": 1227.28500587085,
+						"height": 157.2685878334113,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fs",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 64,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1226,
+						"y": 670,
+						"width": 99.27305213041586,
+						"height": 99.27305213041586,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 772732263754345,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -17,12 +399,12 @@
 				1
 			],
 			"backgroundColor": [
-				1,
-				1,
-				1,
+				0.6588235294117647,
+				0.6588235294117647,
+				0.6588235294117647,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

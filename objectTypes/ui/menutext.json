@@ -1,7 +1,7 @@
 {
-	"name": "creep_count",
+	"name": "menutext",
 	"plugin-id": "Text",
-	"sid": 938057929286726,
+	"sid": 398906401599600,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],

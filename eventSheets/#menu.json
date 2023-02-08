@@ -1,5 +1,265 @@
 {
 	"name": "#menu",
-	"events": [],
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "#gameanalytics"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#plugins"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 600481756739647,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 285271047612166,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "data",
+					"sid": 501167347111872,
+					"parameters": {
+						"key": "\"pudge_max_hp\"",
+						"value": "100"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 741656858515565,
+					"parameters": {
+						"layout": "game"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 716304979545040,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 223507616413530,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 787425210444565,
+					"parameters": {
+						"object": "button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 120179403021688,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "button",
+							"sid": 705056089587294,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"normal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 204037729785385,
+							"parameters": {
+								"key": "\"pudge_max_hp\"",
+								"value": "100"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 473138899315928,
+							"parameters": {
+								"layout": "game"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 512680005646079,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 496042667805702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 880680951764865
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "button",
+							"sid": 316411563554906,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"hard\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 102410681604965,
+							"parameters": {
+								"key": "\"pudge_max_hp\"",
+								"value": "50"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 298536482155285,
+							"parameters": {
+								"layout": "game"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 640481115164513,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 679232566245255
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 967015393432163
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 323122231428295
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 127618280567228,
+					"parameters": {
+						"layer": "\"menu\"",
+						"interactive": false
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 121242645979637,
+					"parameters": {
+						"seconds": "0.25"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 129154811879857,
+					"parameters": {
+						"layer": "\"menu\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 664731158334522,
+					"parameters": {
+						"seconds": "0.15"
+					}
+				},
+				{
+					"callFunction": "showAD",
+					"sid": 472055190501661
+				}
+			],
+			"sid": 903943860290015
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 920693919239960,
+					"parameters": {
+						"object": "fs"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 607382893882820,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
+				}
+			],
+			"sid": 331927474795071
+		}
+	],
 	"sid": 666720507361556
 }

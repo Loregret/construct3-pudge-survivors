@@ -1,0 +1,62 @@
+{
+	"name": "mainbg",
+	"plugin-id": "Sprite",
+	"sid": 179203676307011,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "Grayscale"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1537,
+						"height": 1003,
+						"originX": 0.4983734547820429,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 428682,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.0009970089730807576,
+								0.4983734547820429,
+								0.0009970089730807576,
+								1,
+								0.0009970089730807576,
+								1,
+								0.5,
+								1,
+								0.9990029910269193,
+								0.4983734547820429,
+								0.9990029910269193,
+								0,
+								0.9990029910269193,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 249176207857724,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

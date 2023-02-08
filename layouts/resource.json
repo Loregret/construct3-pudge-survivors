@@ -118,12 +118,13 @@
 						"MAX_HP": 100,
 						"is_alive": true,
 						"show_hp": true,
-						"slowdown": 0
+						"slowdown": 0,
+						"dmg": 0
 					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 255,
+								"speed": 100,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": true,
@@ -677,7 +678,7 @@
 					"behaviors": {
 						"Turret": {
 							"properties": {
-								"range": 900,
+								"range": 635,
 								"rate-of-fire": 0.654,
 								"rotate": true,
 								"rotate-speed": 800,
@@ -976,7 +977,7 @@
 						"y": 1536,
 						"width": 225,
 						"height": 200,
-						"originX": 0.2777777777777778,
+						"originX": 0.25111111111111106,
 						"originY": 0.5,
 						"color": [
 							1,

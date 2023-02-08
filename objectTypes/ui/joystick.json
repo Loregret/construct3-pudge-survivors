@@ -1,0 +1,73 @@
+{
+	"name": "joystick",
+	"plugin-id": "Sprite",
+	"sid": 553982215579419,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 996901628963248
+		},
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 303679698314371
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 208321668028137
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 90,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6200225,
+						"collisionPoly": {
+							"points": [
+								0.14444444444444443,
+								0.13978494623655913,
+								0.5,
+								0,
+								0.8555555555555555,
+								0.13978494623655913,
+								1,
+								0.5,
+								0.8555555555555555,
+								0.8602150537634409,
+								0.5,
+								1,
+								0.14444444444444443,
+								0.8602150537634409,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 722525850589751,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

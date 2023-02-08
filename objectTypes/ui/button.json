@@ -1,0 +1,28 @@
+{
+	"name": "button",
+	"plugin-id": "NinePatch",
+	"sid": 923347438763097,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 276953446554046
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 378,
+		"height": 134,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3629661,
+		"useCollisionPoly": true
+	}
+}

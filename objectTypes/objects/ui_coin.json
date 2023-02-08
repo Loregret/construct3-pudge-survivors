@@ -1,0 +1,55 @@
+{
+	"name": "ui_coin",
+	"plugin-id": "Sprite",
+	"sid": 222673485065816,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 261317920964160
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 53,
+						"height": 58,
+						"originX": 0.42452830188679247,
+						"originY": 0.3879310344827586,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9571633,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8490566037735849,
+								0,
+								0.8490566037735849,
+								0.7758620689655172,
+								0,
+								0.7758620689655172
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 319729023914654,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

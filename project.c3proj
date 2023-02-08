@@ -3,8 +3,8 @@
 	"savedWithRelease": 32702,
 	"name": "Pudge Survivors",
 	"runtime": "c3",
-	"useWorker": "auto",
-	"bundleAddons": false,
+	"useWorker": "dom",
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
@@ -29,8 +36,31 @@
 		},
 		{
 			"type": "plugin",
+			"id": "GameAnalytics",
+			"name": "GameAnalytics",
+			"author": "GameAnalytics",
+			"bundled": false,
+			"version": "3.0.14"
+		},
+		{
+			"type": "plugin",
+			"id": "GameArter_SDK",
+			"name": "GameArter SDK",
+			"author": "GameArter",
+			"bundled": true,
+			"version": "1.5.0.0"
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -73,6 +103,13 @@
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -138,17 +175,36 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vignette",
+			"name": "Vignette",
+			"author": "Brad Larson",
+			"bundled": false
 		}
 	],
 	"uniqueId": "1636xtyqt0a",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"GameArterSDK",
+			"fs",
+			"Browser"
+		],
 		"subfolders": [
 			{
 				"items": [
 					"Audio",
 					"Keyboard",
-					"Touch"
+					"Touch",
+					"GameAnalytics"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -176,7 +232,8 @@
 					"freeze_cold",
 					"particle_ice",
 					"spikes",
-					"shield"
+					"shield",
+					"ui_coin"
 				],
 				"subfolders": [],
 				"name": "objects"
@@ -186,10 +243,16 @@
 					"hp_bar",
 					"hp_bar_frame",
 					"store_bg",
-					"store_button",
-					"creep_count",
+					"money_count",
 					"bonus",
-					"Text"
+					"Text",
+					"button",
+					"menutext",
+					"mainbg",
+					"menutext2",
+					"joystick",
+					"joystick_bg",
+					"loading"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -232,14 +295,18 @@
 		"items": [
 			"game",
 			"resource",
-			"menu"
+			"menu",
+			"loading"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"#game",
-			"#menu"
+			"#menu",
+			"#plugins",
+			"#gameanalytics",
+			"#loading"
 		],
 		"subfolders": []
 	},
@@ -497,6 +564,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Monkey_King_attack1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 807224226496975,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tome_of_Knowledge.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 239204054073330,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -510,7 +593,24 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "UbuntuMono-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 409023654530295,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "UbuntuMono-Bold.ttf",
+					"type": "application/font-sfnt",
+					"sid": 530050176428771,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -594,13 +694,13 @@
 		"description": "",
 		"version": "1.0",
 		"author": "loregret",
-		"authorEmail": "",
+		"authorEmail": "loregrets@yahoo.com",
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -611,9 +711,9 @@
 			0
 		],
 		"splashColor": [
-			1,
-			1,
-			1,
+			0.3215686274509804,
+			0.3215686274509804,
+			0.3215686274509804,
 			0
 		],
 		"useThemeColor": false,
@@ -631,12 +731,12 @@
 		"compositingMode": "standard",
 		"sampling": "trilinear",
 		"downscaling": "medium",
-		"renderingMode": "auto",
-		"anisotropicFiltering": "auto",
+		"renderingMode": "2d",
+		"anisotropicFiltering": "off",
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -645,5 +745,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": "game"
+	"firstLayout": "loading"
 }

@@ -1,0 +1,119 @@
+{
+	"name": "#plugins",
+	"events": [
+		{
+			"functionName": "mute",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 705123319942944,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "set-silent",
+					"objectClass": "Audio",
+					"sid": 137114848137209,
+					"parameters": {
+						"mode": "silent"
+					}
+				}
+			],
+			"sid": 349398108414701
+		},
+		{
+			"functionName": "unmute",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 265204337284476,
+					"parameters": {
+						"time-scale": "1.0"
+					}
+				},
+				{
+					"id": "set-silent",
+					"objectClass": "Audio",
+					"sid": 323874578273767,
+					"parameters": {
+						"mode": "not-silent"
+					}
+				}
+			],
+			"sid": 899804924873037
+		},
+		{
+			"functionName": "showAD",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "request-ad",
+					"objectClass": "GameArterSDK",
+					"sid": 930023316354426
+				}
+			],
+			"sid": 862555117174348
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "game-onpause",
+					"objectClass": "GameArterSDK",
+					"sid": 735272064681741
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "mute",
+					"sid": 107805424559813
+				}
+			],
+			"sid": 788350937893455
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "game-onresume",
+					"objectClass": "GameArterSDK",
+					"sid": 777360294724357
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "unmute",
+					"sid": 353225316458260
+				}
+			],
+			"sid": 187595931940718
+		}
+	],
+	"sid": 238393233711193
+}

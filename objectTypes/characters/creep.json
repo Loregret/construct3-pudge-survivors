@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 248446748200598
+		},
+		{
+			"name": "dmg",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 826805450926805
 		}
 	],
 	"behaviorTypes": [
@@ -87,7 +94,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [

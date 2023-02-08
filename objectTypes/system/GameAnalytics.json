@@ -1,0 +1,23 @@
+{
+	"name": "GameAnalytics",
+	"plugin-id": "GameAnalytics",
+	"sid": 142663039340858,
+	"singleglobal-inst": {
+		"type": "GameAnalytics",
+		"properties": {
+			"build": "1.0",
+			"custom-user-id": "",
+			"enable-manual-session-handling": "true",
+			"enable-info-log": "true",
+			"enable-verbose-log": "false",
+			"auto-detect-app-version": "false",
+			"game-key-browser": "16b7c03b162d783159b6f0df642416f7",
+			"secret-key-browser": "357kKuBPCHbEN68fb6JsuryJFgmG53crAq947b28",
+			"game-key-android": "",
+			"secret-key-android": "",
+			"game-key-ios": "",
+			"secret-key-ios": ""
+		},
+		"uid": 60
+	}
+}

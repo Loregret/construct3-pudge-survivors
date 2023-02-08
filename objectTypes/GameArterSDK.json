@@ -1,0 +1,20 @@
+{
+	"name": "GameArterSDK",
+	"plugin-id": "GameArter_SDK",
+	"sid": 104945251570560,
+	"singleglobal-inst": {
+		"type": "GameArterSDK",
+		"properties": {
+			"project-id": 11866,
+			"project-version": 1,
+			"sdk-mode": "B",
+			"sdk-version": "2.0",
+			"notifications": false,
+			"auto-saving": false,
+			"activate-debug": false,
+			"enable-prerollad": true,
+			"minimum-adtime": 60000
+		},
+		"uid": 62
+	}
+}
